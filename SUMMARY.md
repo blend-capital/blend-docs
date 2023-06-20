@@ -6,6 +6,19 @@
 
 * [Blend Whitepaper](whitepaper/blend-whitepaper.md)
 
+## Users
+
+* [General](users/general.md)
+* [Lending-Borrowing](users/lending-borrowing/README.md)
+  * [Lending](users/lending-borrowing/lending.md)
+  * [Borrowing](users/lending-borrowing/borrowing.md)
+  * [Interest-Rates](users/lending-borrowing/interest-rates.md)
+  * [Health-Factors](users/lending-borrowing/health-factors.md)
+  * [Liquidations](users/lending-borrowing/liquidations.md)
+  * [Default-Protection](users/lending-borrowing/default-protection.md)
+* [Backstopping](users/backstopping.md)
+* [BLND Token](users/blnd-token.md)
+
 ## Pool Creators
 
 * [General](pool-creators/general.md)
