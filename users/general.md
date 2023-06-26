@@ -4,23 +4,23 @@
 
 ### What is Blend?
 
-Blend is a DeFi (decentralized finance) protocol that allows any entity to create or utilize an immutable lending market that fits their needs.
+Blend is a DeFi (decentralized finance) protocol that allows any entity to create or utilize an immutable lending market that fits its needs.
 
-### What is a decentralized finance protocol?
+### What is a Decentralized Finance protocol?
 
-A decentralized finance protocol is a financial application that does not rely on or require its users to trust a central intermediary. This is achieved by building the protocol using immutable smart contracts that run on a distributed network. Blend is made up of a group of immutable smart contracts running on Stellar's Soroban smart contract engine. There is no central organization that controls Blend and no organization Blend relies on to continue operating. This means that Blend is non-custodial, trust-minimized, and censorship-resistant.
+A decentralized finance protocol is a financial application that does not rely on or require its users to trust a central intermediary. This is achieved by building the protocol using immutable smart contracts that run on a distributed network. Blend consists of a group of immutable smart contracts running on Stellar's Soroban smart contract engine. No central organization controls Blend, and there is no organization Blend relies on to continue operating. This means that Blend is non-custodial, trust-minimized, and censorship-resistant.
 
 ### Why should you care about Blend?
 
-Blend is the only app that offers lending pools that are secure, capital efficient, and permissionless. Utilizing it, ecosystem entities will be able to provide a variety of new functionality to the Stellar ecosystem such as real-world-financing, leveraged trading, yield products, and more DeFi apps.
+Blend is the only defi protocol that offers lending pools that are secure, capital efficient, and permissionless. Utilizing it, ecosystem entities will be able to provide a variety of new functionality to the Stellar ecosystem, such as real-world financing, leveraged trading, yield products, and new DeFi apps.
 
 **Security**
 
-All Blend lending pools are isolated from one another. So lenders and borrowers are only exposed to the risk of the pool they're using. Additionally, each lending pool has manditory insurance through the backstop module. TODO: link
+All Blend lending pools are isolated from one another. So lenders and borrowers are only exposed to the risk of the pool they're using. Additionally, each lending pool has mandatory insurance through the [backstop module](../whitepaper/blend-whitepaper.md#backstop-module).
 
 **Capital Efficiency**
 
-Blend's reactive interest rate mechanism ensures that there isn't slack capital sitting in the protocol. Lenders and borrowers can expect to experience relatively efficient rates while using Blend.
+Blend's reactive interest rate mechanism ensures that there isn't slack capital in the protocol. Lenders and borrowers can expect to experience relatively efficient rates while using Blend.
 
 **Permissionless**
 
@@ -28,7 +28,7 @@ Anyone can use Blend to Lend or Borrow. But more importantly, anyone can deploy 
 
 ### What are the benefits of Blend for Stellar?
 
-Blend brings a decentralized, on-chain lending markets to the Stellar ecosystem.\
+Blend brings decentralized, on-chain lending markets to the Stellar ecosystem.\
 Within the ecosystem, this promises to:
 
 * Increase trading and payment liquidity
@@ -38,22 +38,13 @@ Within the ecosystem, this promises to:
 
 ### How do I use Blend?
 
-There is a decentralized web app that allows users to interact with the protocol.
+Currently, Blend is still in development. Once it's released to the Stellar testnet, there will be a web app where users can use it.&#x20;
 
-The web app currently supports the following wallets:
-
-* [**Freighter**](https://www.freighter.app)
-* [**Albedo**](https://albedo.link)
-
-As other interfaces begin to integrate Blend, a list of these integrations will be shown here!
-
-***
-
-More technical users can also use Blend directly by calling the smart contracts using the Horizon API layer. Please see the Soroban documentation and the technical-docs section for more information. TODO: links
+More technical users can also use Blend directly by calling the smart contracts using the Horizon API layer. Please see the Soroban documentation and the [technical docs](../tech-docs/general.md) section for more information.
 
 ### Does Blend have fees?
 
-Using Blend can incur three kinds of fees:
+Using Blend can incur two kinds of fees:
 
 **Network Fees**
 
@@ -61,33 +52,39 @@ Blend users must pay [Stellar Network fees](https://developers.stellar.org/docs/
 
 **Interest Rates**
 
-Borrowers on Blend must pay interest fees to lenders. These fluctuate based on demand.
+Borrowers on Blend must pay interest fees to lenders. These vary based on the parameters set by pool creators and fluctuate based on demand. For more information, see the [interest rates section](../whitepaper/blend-whitepaper.md#interest-rates) of the whitepaper.
 
-**Backstop Take Rates**
+**Liquidation Premiums**
 
-Blend lenders share a portion of the interest they are paid by borrowers with their lending pools backstop module depositors. In return the backstop module insures them against any lending pool losses.
+When a Blend borrower is liquidated, the liquidator will likely demand a liquidation premium, meaning the value of the collateral they claim will be greater than the value of the liabilities they repay. The size of the premium is market-driven; it will always be the smallest premium needed to clear the liquidation. To learn more about the liquidation mechanism, see the[ liquidations section](../whitepaper/blend-whitepaper.md#liquidations) of the whitepaper.
 
 ### Can Blend be changed or upgraded?
 
-No. The closest thing to an upgrade for Blend is an emissions fork - in which case the old version of the protocol still functions as expected it just stops receiving emissions.
+No. The closest thing to an upgrade for Blend is an [emissions fork](../whitepaper/blend-whitepaper.md#emission-migration) - in which case the old version of the protocol still functions as expected; it just stops receiving emissions.
 
 ### What's a BLND token?
 
-BLND is Blend's platform token. It is issued to those who use the protocol, and can be deposited in the backstop module to insure lending pools.
+BLND is Blend's platform token. It is issued to protocol users and can be deposited in the backstop module to insure lending pools.
 
 ### Are there risks when using Blend?
 
-Using any application involves risk. There are four main risks user's should consider when using Blend.
+Using any financial application involves risk. There are four main risks users should consider when using Blend.
 
 **Smart Contract Risk**
 
-Blend functions using smart contracts. If a bug was discovered and exploited it could result in loss of user funds. To mitigate this risk, the Blend Protocol has been audited by third parties.\
+Blend functions using smart contracts. If a bug is discovered and exploited, it could result in a loss of user funds. To mitigate this risk, the Blend Protocol has been audited by third parties.\
 Audit Reports:
 
-**Stellar Smart Contract Risk**
+TODO
 
-Blend's smart contracts are built using the Stellar's Soroban smart contract protocol. If a vulnerability was discovered in Soroban it could result in loss of user funds.
+#### Oracle Risk
 
-**Stellar Decentralized Ledger Risk**
+Blend's lending pools rely on oracles to price assets accurately. If a pool's oracle stopped functioning - the pool's users could suffer a loss of user funds.
 
-As with all decentralized ledgers Stellar comes with its unique set of risks. You can read more about the Stellar Consensus Protocol and it's risks [here](https://developers.stellar.org/docs/glossary/scp/).
+#### Asset Risk
+
+Lenders using Blend lending pools are exposed to asset risk. High volatility in assets could cause the pool to take on bad debt. Lenders could suffer asset loss if the amount of bad debt exceeds the value of assets [backstopping](backstopping.md) the pool.
+
+**Stellar Protocol Ledger Risk**
+
+As with all decentralized ledgers, Stellar has its unique set of risks. You can read more about the Stellar Consensus Protocol and its risks [here](https://developers.stellar.org/docs/glossary/scp/).

@@ -2,11 +2,11 @@
 
 * [Blend Documentation](README.md)
 
-## Whitepaper
+## 🥷 Whitepaper
 
 * [Blend Whitepaper](whitepaper/blend-whitepaper.md)
 
-## Users
+## 🚶 Users
 
 * [General](users/general.md)
 * [Lending-Borrowing](users/lending-borrowing/README.md)
@@ -16,7 +16,7 @@
 * [Backstopping](users/backstopping.md)
 * [BLND Token](users/blnd-token.md)
 
-## Pool Creators
+## 🦄 Pool Creators
 
 * [General](pool-creators/general.md)
 * [Tutorial: Deploying a Pool](pool-creators/tutorial-deploying-a-pool.md)
@@ -27,3 +27,7 @@
 * [Pool Management](pool-creators/pool-management.md)
 * [Selecting an Oracle](pool-creators/selecting-an-oracle.md)
 * [Setting Backstop Take Rate](pool-creators/setting-backstop-take-rate.md)
+
+## 🔫 Tech Docs
+
+* [General](tech-docs/general.md)

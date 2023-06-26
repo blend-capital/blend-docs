@@ -4,8 +4,9 @@ Interest rate parameters are used to define how much borrowers should be charged
 
 ### Utilization Rate
 
-An asset's utilization rate is the percentage of the asset's deposits that are currently being borrowed. It can be calculated using the following formula\
-U = D/T
+An asset's utilization rate is the percentage of the asset's deposits that are currently being borrowed. It can be calculated using the following formula:
+
+$$UtilizationRate = \frac{TotalBorrowed}{TotalSupplied}$$
 
 ### Base Interest Rate
 

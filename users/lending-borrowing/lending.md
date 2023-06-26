@@ -1,34 +1,35 @@
 # Lending
 
-### How does lending work on Blend?
+### How Does Lending with Blend Work?
 
-Lenders supply assets they wish to Blend lending pools, borrowers then may borrow the assets by posting collateral to the pool and paying the lenders interest.
+Lenders supply assets they wish to lend to Blend lending pools. Borrowers then may borrow the assets by posting collateral to the pool and paying interest to lenders.
 
-### How do you lend using Blend?
+### How Do You Lend Using Blend?
 
-To lend using Blend lenders must first select a lending pool to lend to. When choosing a pool to lend to users should:
+To lend using Blend, lenders must first select a lending pool to lend to. When choosing a pool to lend to, users should:
 
-* Check the pool supports borrowing of the asset they want to lend - this is easy check for as the asset will have an lending interest rate above 0, and appear to be borrowable.
-* Ensure the pool has a well capitalized backstop module.
-  * The backstop module is the amount of assets insuring the pool against bad debt, so well capitalized backstop modules point to a pool being relatively safe
-  * If a large percentage of the backstop module is queued for withdrawal, that points to the pool being in an unstable state and the user should avoid it for the time being.
+* Check the pool supports borrowing of the asset they want to lend - this is easy to check, as the pool will show that asset have a lending interest rate above 0 and show them as borrowable.
+* Ensure the pool has a well-capitalized backstop module.
+  * The backstop module is a fund of assets insuring the pool against bad debt. Well-capitalized backstop modules point to a pool being relatively safe, as backstop module depositors will not want to insure unsafe pools.&#x20;
+  * If a large percentage of the backstop module is queued for withdrawal, that points to the pool being in an unstable state - and the user should avoid it for the time being.
 * Ensure the assets supported as collateral in the pool are safe collateral assets.
-  * Generally, low volatility, high liquidity assets make good collateral.
-* Ensure the pools risk parameters are set appropriately
-  * The pool should have reasolable collateral and liability factors for supported assets.
-* Ensure the pools oracle contract is trustworthy
-  * Oracles are crucial for the safety of pools - users should always be sure the oracle for their lending pool is trustworthy.
+  * Generally, low volatility and high liquidity assets make good collateral.
+* Ensure the pool's risk parameters are set appropriately.
+  * The pool should have reasonable collateral and liability factors for supported assets.
+* Ensure the pool's oracle contract is reliable.
+  * Lending pools rely on oracles to fetch asset prices - users should always be sure the oracle for their lending pool is reliable, or their assets may be lost.
 
 Lenders provide assets to the lending pool and receive interest in return. Borrowers can borrow these assets by posting collateral and paying interest at loan repayment.
 
 Lenders can withdraw lent assets from the protocol at any time as long as two conditions are met:
 
-* The lending pool the tokens are lent to must have sufficient liquidity - this means that borrowers cannot have borrowed all of the pools assets. If they have it's not a big deal as Blend's interest rate model will ensure that either borrowers repay, are liquidated, or more lenders step up to receive the high interest rates. TODO: link to interest rate stuff.
-* The lender must be in good standing with the pool post-withdrawal - lenders have the option of using lent funds as collateral to borrow other pool assets. If they choose to do so they are only allowed to withdraw lent funds if the withdrawal maintains a health factor above 1. Otherwise they must repay the borrowed funds before they can withdraw.
+* The lending pool the tokens are lent to must have sufficient liquidity - this means that the pool must have more unborrowed assets than the amount the lender wishes to withdraw.&#x20;
+  * If the pool does not have sufficient liquidity, the interest rate model will ensure liquidity increases. Blend's interest rate model raises interest if an asset is overutilized, ensuring that either borrowers repay, are liquidated, or more lenders enter the pool to receive the high interest rates. To learn more, see the [interest rate section](../../whitepaper/blend-whitepaper.md#interest-rates) of the whitepaper.
+* The lender must be in good standing with the pool post-withdrawal - lenders have the option of using lent funds as collateral to borrow other pool assets. If they choose to do so, they are only allowed to withdraw lent funds if the withdrawal does not cause them to exceed their [borrow limit](borrowing.md#how-much-can-users-borrow). Otherwise, they must repay the borrowed funds before they can withdraw.
 
 ### What are pool tokens?
 
-If lenders choose not to use the funds they lent as collateral they will recieve pool tokens from the lending pool that represent their deposit. These tokens are fungible so users can transfer them to other network participants, use them in liquidity pools, and more.
+If lenders choose not to use the funds they lent as collateral, they will receive pool tokens from the lending pool that represent their deposit. These tokens are fungible, so users can transfer them to other network participants, use them in liquidity pools, and more.
 
 ### Why would users lend on Blend?
 
@@ -36,7 +37,7 @@ In exchange for lending using Blend lending pools, lenders receive interest from
 
 ### What is the interest rate for lending on Blend?
 
-Lending interest rates equal the _borrowing interest rate_ multiplied by the _utilization ratio_ since interest paid by borrowers is distributed proportionally to lenders. Borrowing interest rates are demand-based and calculated using the utilization ratio. This means borrowing interest rates increase as the percentage of protocol assets lent to borrowers increases. Check out the Interest Rate section to learn more about how this is calculated. TODO: link
+Lending interest rates equal the _borrowing interest rate_ multiplied by the _utilization ratio_ since interest paid by borrowers is distributed proportionally to lenders. Borrowing interest rates are demand-based and calculated using the utilization ratio. This means borrowing interest rates increase as the percentage of protocol assets lent to borrowers increases. See the [interest rate section](../../whitepaper/blend-whitepaper.md#interest-rates) of the whitepaper to learn more about how they are calculated.
 
 ### How do lenders receive interest?
 

@@ -4,11 +4,10 @@ In the case that a user's account becomes delinquent because they exceed their [
 
 ### How do Blend Liquidations Work?
 
-When a Blend user becomes delinquent, any user may initiate a liquidation auction on their account - the liquidator will choose a set of the user's collateral positions to be auctioned off, and a set of their liability auctions to be repaid. They cannot auction off more liabilities than are necesssary to bring the account back to a healthy state, and the value of collateral auctioned off cannot greatly exceed the value of liabilities being repaid. \
+When a Blend user becomes delinquent, any user may initiate a liquidation auction on their account - the liquidator will choose a set of the user's collateral positions to be auctioned off and a set of their liability auctions to be repaid. They cannot auction off more liabilities than are necessary to bring the account back to a healthy state, and the value of collateral auctioned off cannot greatly exceed the value of liabilities being repaid. \
 \
-As soon as the auction is initiated it begins, at this point anyone can fill the auction. The percent of the offered collateral the auction filler receives depends on how long the auction has gone on (the percent grows over time). Once 100% of the offered collateral is available, the percent of the liability that the filler must repay starts decreasing from 100% until it hits 0%. In this way we can be sure that the auction will be filled as soon as a market participant deems it profitable, and no auction will go unfilled. \
+As soon as the auction is initiated, it begins. At this point, anyone can fill the auction. The percent of the offered collateral the auction filler receives depends on how long the auction has gone on (the percent grows over time). Once 100% of the offered collateral is available, the percent of the liability that the filler must repay starts decreasing from 100% until it hits 0%. This way, we can be sure that the auction will be filled as soon as a market participant deems it profitable.&#x20;
 
+Since liquidators have autonomy over when to fill the auction, they will typically fill it at a point where the value of the collateral they receive slightly exceeds the value of the liabilities they repay. The premium the liquidator receives is called the Liquidation Premium.
 
-### What if price changes restore solvency to an account being liquidated?
-
-If the market moves and causes a formerly delinquent account to become solvent, by increasing the value of their collateral for example, while an auction liquidation the account is underway any user may cancel the pending liquidation.
+For a full explanation of the liquidation process see the [liquidation section](../../whitepaper/blend-whitepaper.md#liquidations) of the whitepaper.
