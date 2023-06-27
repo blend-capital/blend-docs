@@ -45,7 +45,7 @@ Sample base interest rates:
 * IR\_3 is a fixed-rate asset with:
   * U\_T = 0.01 | R\_1 = 0.05 | R\_2 = 0 | R\_3 = 0
 
-Desmos link: TODO
+Desmos link: [https://www.desmos.com/calculator/hzqgduyymj](https://www.desmos.com/calculator/hzqgduyymj)&#x20;
 
 ### Reactive Interest&#x20;
 
