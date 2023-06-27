@@ -6,19 +6,6 @@ Lenders supply assets they wish to lend to Blend lending pools. Borrowers then m
 
 ### How Do You Lend Using Blend?
 
-To lend using Blend, lenders must first select a lending pool to lend to. When choosing a pool to lend to, users should:
-
-* Check the pool supports borrowing of the asset they want to lend - this is easy to check, as the pool will show that asset have a lending interest rate above 0 and show them as borrowable.
-* Ensure the pool has a well-capitalized backstop module.
-  * The backstop module is a fund of assets insuring the pool against bad debt. Well-capitalized backstop modules point to a pool being relatively safe, as backstop module depositors will not want to insure unsafe pools.&#x20;
-  * If a large percentage of the backstop module is queued for withdrawal, that points to the pool being in an unstable state - and the user should avoid it for the time being.
-* Ensure the assets supported as collateral in the pool are safe collateral assets.
-  * Generally, low volatility and high liquidity assets make good collateral.
-* Ensure the pool's risk parameters are set appropriately.
-  * The pool should have reasonable collateral and liability factors for supported assets.
-* Ensure the pool's oracle contract is reliable.
-  * Lending pools rely on oracles to fetch asset prices - users should always be sure the oracle for their lending pool is reliable, or their assets may be lost.
-
 Lenders provide assets to the lending pool and receive interest in return. Borrowers can borrow these assets by posting collateral and paying interest at loan repayment.
 
 Lenders can withdraw lent assets from the protocol at any time as long as two conditions are met:

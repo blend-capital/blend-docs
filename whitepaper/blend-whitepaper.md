@@ -131,6 +131,8 @@ $$
 \begin{align*} \text{where}\\ &RM =\text{Rate modifier for pool asset}\\ &R_{base} =\text{Protocol's base interest rate (0.01)}\\ &R_1, R_2, R_3 =\text{Interest rate slope values for pool asset} \end{align*}
 $$
 
+<figure><img src="../.gitbook/assets/interest_rate_model.png" alt=""><figcaption></figcaption></figure>
+
 _Figure 1: Interest rate curve examples for various asset classes where low curve has ($U\_T$=0.9, $R\_1$=0.03, $R\_2$=0.2, $R\_3$=1), medium curve has ($U\_T$=0.75, $R\_1$=0.05, $R\_2$=0.5, $R\_3$=1.5), high curve has ($U\_T$=0.6, $R\_1$=0.07, $R\_2$=1, $R\_3$=2), and the Rate Modifier is 1._
 
 The Rate Modifier is a reactive value that adjusts the interest rate the pool charges for borrowing the asset to achieve a target utilization rate. The modifier slowly sums the error in utilization over blocks, compensating for any steady-state error as a result of the user-defined initial interest rates. The value is bounded between _\[0.1, 100]_ to limit the effective interest rate change possible and avoid potential integral windup that could cause instability. The updated modifier is calculated as follows:

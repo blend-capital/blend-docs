@@ -9,6 +9,7 @@
 ## 🚶 Users
 
 * [General](users/general.md)
+* [Choosing Pools](users/choosing-pools.md)
 * [Lending-Borrowing](users/lending-borrowing/README.md)
   * [Lending](users/lending-borrowing/lending.md)
   * [Borrowing](users/lending-borrowing/borrowing.md)

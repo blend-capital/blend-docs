@@ -12,7 +12,7 @@ A decentralized finance protocol is a financial application that does not rely o
 
 ### Why should you care about Blend?
 
-Blend is the only defi protocol that offers lending pools that are secure, capital efficient, and permissionless. Utilizing it, ecosystem entities will be able to provide a variety of new functionality to the Stellar ecosystem, such as real-world financing, leveraged trading, yield products, and new DeFi apps.
+Blend offers lending pools that are secure, capital efficient, and permissionless. Utilizing it, ecosystem entities will be able to provide a variety of new functionality to the Stellar ecosystem, such as real-world financing, leveraged trading, yield products, and new DeFi apps.
 
 **Security**
 
