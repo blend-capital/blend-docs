@@ -10,13 +10,13 @@ Lenders provide assets to the lending pool and receive interest in return. Borro
 
 Lenders can withdraw lent assets from the protocol at any time as long as two conditions are met:
 
-* The lending pool the tokens are lent to must have sufficient liquidity - this means that the pool must have more unborrowed assets than the amount the lender wishes to withdraw.&#x20;
+* The lending pool tokens are lent to must have sufficient liquidity — this means the pool must have more unborrowed assets than the amount the lender wishes to withdraw.&#x20;
   * If the pool does not have sufficient liquidity, the interest rate model will ensure liquidity increases. Blend's interest rate model raises interest if an asset is overutilized, ensuring that either borrowers repay, are liquidated, or more lenders enter the pool to receive the high interest rates. To learn more, see the [interest rate section](../../whitepaper/blend-whitepaper.md#interest-rates) of the whitepaper.
-* The lender must be in good standing with the pool post-withdrawal - lenders have the option of using lent funds as collateral to borrow other pool assets. If they choose to do so, they are only allowed to withdraw lent funds if the withdrawal does not cause them to exceed their [borrow limit](borrowing.md#how-much-can-users-borrow). Otherwise, they must repay the borrowed funds before they can withdraw.
+* The lender must be in good standing with the pool post-withdrawal — lenders have the option of using lent funds as collateral to borrow other pool assets. If they choose to do so, they are only allowed to withdraw lent funds if the withdrawal does not cause them to exceed their [borrow limit](borrowing.md#how-much-can-users-borrow). Otherwise, they must repay the borrowed funds before they can withdraw.
 
 ### What are pool tokens?
 
-If lenders choose not to use the funds they lent as collateral, they will receive pool tokens from the lending pool that represent their deposit. These tokens are fungible, so users can transfer them to other network participants, use them in liquidity pools, and more.
+If lenders choose not to use the funds they lent as collateral, they will receive pool tokens from the lending pool which represent their deposit. These tokens are fungible, so users can transfer them to other network participants, use them in liquidity pools, and more.
 
 ### Why would users lend on Blend?
 

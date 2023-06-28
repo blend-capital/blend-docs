@@ -2,9 +2,10 @@
 
 ### How does borrowing work on Blend?
 
-Borrowing from Blend requires that users post sufficient collateral to the lending pool they are borrowing from. The collateral that is posted is also lent to the pool so borrowers generate interest on it. \
+Borrowing from Blend requires users to post sufficient collateral to the lending pool they are borrowing from. The collateral posted is also lent to the pool, so borrowers generate interest on it. \
 \
-The amount of collateral the borrower must post depends on their collateral's Collateral Factor (CF) and the asset their borrowing's Liability Factor(LF). The required dollar value of their collateral can be calculated with the following formula:\
+The amount of collateral the borrower must post depends on their collateral's Collateral Factor(CF) and the borrowed asset's Liability Factor(LF). The required dollar value of their collateral can be calculated with the following formula:
+
 $$CollateralValue = \frac{LiabilityValue}{LF*CF }$$
 
 So if the user has collateral with a $$CF$$ of 0.5 and is attempting to borrow $450 of an asset with a $$LF$$of 0.9, they must post at least $1000 of collateral.&#x20;
@@ -15,18 +16,18 @@ Borrowers must always maintain this collateral ratio as the value of their colla
 
 To borrow using Blend, borrowers must first select a lending pool to borrow from. When choosing a pool to borrow from, users should:
 
-* Check the pool supports borrowing of the asset they want to borrow - this is easy to verify as the asset will appear to be borrowable.
+* Check the pool supports borrowing of the asset they want to borrow.
 * Check that the pool supports collateralizing the asset they wish to collateralize.
 * Check that the Collateral Factor and Liability Factors are sufficient for the level of debt the user wants to incur against their collateral.
 * Ensure the pool has a well capitalized backstop module.
-  * The backstop module is a fund of assets insuring the pool against bad debt, so well-capitalized backstop modules point to a pool being relatively safe.
-  * If a large percentage of the backstop module is queued for withdrawal, that points to the pool being in an unstable state, and the user should avoid it for the time being.
+  * The backstop module is a fund of assets insuring the pool against bad debt, so well-capitalized backstop modules denote a pool being relatively safe.
+  * If a large percentage of the backstop module is queued for withdrawal, the pool is probably in an unstable state, and the user should avoid it for the time being.
 * Ensure the assets supported as collateral in the pool are safe collateral assets.
   * Generally, low volatility, high liquidity assets make good collateral.
 * Ensure the pool's risk parameters are set appropriately.
   * The pool should have reasonable collateral and liability factors for supported assets.
 * Ensure the pool's oracle contract is trustworthy.
-  * Oracles are crucial for the safety of pools - users should always be sure the oracle for their lending pool is reliable.
+  * Oracles are crucial for the safety of pools — users should always be sure the oracle for their lending pool is reliable.
 
 Once a lending pool is selected, borrowers deposit collateral in it and can borrow assets from it.
 
@@ -60,11 +61,11 @@ Interest automatically accrues to a borrower's liability balance over time. When
 
 ### How Is Interest Calculated&#x20;
 
-&#x20;Interest rates vary based on pre-set interest rate parameters but are generally based on the utilization of an asset in a pool (how much of the supplied amount is borrowed). In addition, interest can move higher or lower if an asset is consistently over or underutilized due to the interest rate model's reactivity.&#x20;
+Interest rates vary based on pre-set interest rate parameters but are generally based on the utilization of an asset in a pool (how much of the supplied amount is borrowed). In addition, interest can move higher or lower if an asset is consistently over or underutilized due to the interest rate model's reactivity.&#x20;
 
 To learn more about how Blend calculates interest rates, see the [interest rate section](../../whitepaper/blend-whitepaper.md#interest-rates) of the whitepaper.
 
 ### Do Borrowers Earn BLND Emissions?
 
-Borrowers earn BLND emissions if their pool is in the reward zone and the pool creator allocated emissions to borrowers of the asset the user is borrowing. They may claim these emissions at any time, at which point the earned BLND is deposited into the 80:20 BLND:USDC liquidity pool and deposited into the pool's backstop module on behalf of the user.
+Borrowers earn BLND emissions if their pool is in the reward zone, and the pool creator allocated emissions to borrowers of the asset the user is borrowing. They may claim these emissions at any time, at which point the earned BLND is deposited into the 80:20 BLND:USDC liquidity pool and deposited into the pool's backstop module on behalf of the user.
 

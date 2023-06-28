@@ -19,7 +19,7 @@ Lenders and borrowers receive emissions if the pool they're using is in the [rew
 Backstop depositors always receive emissions. 70% of BLND emissions are distributed to backstop depositors.\
 
 
-Emissions must claim them from either the pool or backstop (depending on how they were earned) to receive their issued BLND. When users claim emissions, the earned BLND is deposited into the [BLND:USDC 80/20 liquidity pool](backstopping.md#what-are-blnd-usdc-80-20-liquidity-pool-shares), and the shares are deposited into the backstop module for the pool the user was backstopping or using.&#x20;
+Emissions must claim them from either the pool or backstop (depending on how they were earned) to receive their issued BLND. When users claim emissions, the earned BLND is deposited into the [BLND:USDC 80:20 liquidity pool](backstopping.md#what-are-blnd-usdc-80-20-liquidity-pool-shares), and the shares are deposited into the backstop module for the pool the user was backstopping or using.&#x20;
 
 ### How many BLND tokens are there?
 
@@ -27,13 +27,13 @@ Emissions must claim them from either the pool or backstop (depending on how the
 
 *   5,750,000 BLND to YieldBlox DAO
 
-    These tokens will be sent to the YieldBlox DAO treasury. They can be used immediately
+    These tokens will be sent to the YieldBlox DAO treasury. They can be used immediately.
 *   7,500,000 BLND to Ecosystem Organizations
 
-    These tokens will be distributed to custom lockup contracts that allow organizations to use BLND in the protocol, but not to transfer them for 4 years. The purpose of this distribution is to help early adopters of Blend bootstrap their pools
+    These tokens will be distributed to custom lockup contracts which allow organizations to use BLND in the protocol, but not to transfer them for 4 years. The purpose of this distribution is to help early adopters of Blend bootstrap their pools.
 *   27,000,000 BLND to core contributors
 
-    These tokens will be distributed to lockup smart contracts where they cannot be accessed for 2 years
+    These tokens will be distributed to lockup smart contracts where they cannot be accessed for 2 years.
 *   9,750,000 BLND to investors
 
     These tokens will be distributed to lockup smart contracts that allow half to be accessed after 6 months, and the remainder to be accessed after a year.

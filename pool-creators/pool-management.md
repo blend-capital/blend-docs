@@ -1,20 +1,20 @@
 # Pool Management
 
-Pool management encompasses modifying pool status to freeze or unfreeze pools - and modifying pool parameters to add assets or adjust their risk/interest rate parameters.
+Pool management encompasses modifying pool status to freeze or unfreeze pools — and modifying pool parameters to add assets or adjust their risk/interest rate parameters.
 
 ### Pool Admin
 
-Pools may set a designated admin that has the authority to change pool status' or update asset risk/interest rate parameters.&#x20;
+Pools may set a designated admin that has the authority to change pool status or update asset risk/interest rate parameters.&#x20;
 
 Pools with admins are considered owned pools. Alternatively, the pool's admin address can be set to a dead address, which makes the pool immutable, although its status can still be changed by the backstop module.&#x20;
 
 Pools without admins are standard pools. Standard pools are more decentralized and trustless than owned pools but lack the flexibility some pool creators may desire. We should note that an admin address must still be supplied to create and set up a pool. After the pool is created, the admin should change the admin address to a dead address to make the pool standard.\
 \
-Pool creators set the pool admin when they create the pool using the deploy\_pool function on the pool factory contract. They can change it later using the set\_admin function.
+Pool creators set the pool admin when they create the pool using the `deploy_pool` function on the pool factory contract. They can change it later using the `set_admin` function.
 
 ### Pool Status
 
-Pool status changes are the primary way that pools can respond to unforeseen risks. Pools have three statuses'.
+Pool status changes are the primary way that pools can respond to unforeseen risks. Pools have three statuses.
 
 #### Active:
 
@@ -52,9 +52,9 @@ The backstop requirements to set specific pool status are as follows:
 
 #### Frozen:
 
-* Over 50% of backstop deposits are queued for withdrawal
+* Over 50% of backstop deposits are queued for withdrawal.
 
-When a pool admin sets the pool to a more restrictive status, the backstop state cannot be used to set a less restrictive state. Likewise, pool admins cannot set a less restrictive status' if the pool's backstop's state does not meet the requirements for that status.
+When a pool admin sets the pool to a more restrictive status, the backstop state cannot be used to set a less restrictive state. Likewise, pool admins cannot set a less restrictive status if the pool's backstop's state does not meet the requirements for that status.
 
 ### Initial Pool Status
 
@@ -62,7 +62,7 @@ Pools start in the On-Ice status. This is to limit the creation of unsafe pools 
 
 ### Pool Migration
 
-Standard pools occasionally need to be updated when oracles need to be changed or when asset parameters require an update. Backstop-triggered status changes allow backstop depositors to force borrowers and lenders to move to a new pool. When an updated pool is deployed, backstop depositors can coordinate to queue their deposits for withdrawal; then anyone can update pool status to FROZEN - forcing lenders and borrowers to migrate.\
+Standard pools occasionally need to be updated when oracles need to be changed or when asset parameters require an update. Backstop-triggered status changes allow backstop depositors to force borrowers and lenders to move to a new pool. When an updated pool is deployed, backstop depositors can coordinate to queue their deposits for withdrawal; then anyone can update pool status to FROZEN — forcing lenders and borrowers to migrate.\
 \
 Owned pools also need to be updated when oracles need to be changed since pool admins cannot update the oracle address. Pool migration is simpler for owned pools as the admin can set the pool status to FROZEN without coordinating with backstop depositors.
 

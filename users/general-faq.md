@@ -1,4 +1,4 @@
-# General
+# General/FAQ
 
 ## General
 
@@ -12,19 +12,19 @@ A decentralized finance protocol is a financial application that does not rely o
 
 ### Why should you care about Blend?
 
-Blend offers lending pools that are secure, capital efficient, and permissionless. Utilizing it, ecosystem entities will be able to provide a variety of new functionality to the Stellar ecosystem, such as real-world financing, leveraged trading, yield products, and new DeFi apps.
+Blend offers lending pools that are secure, capital efficient, and permissionless. Utilizing it, ecosystem entities will be able to provide a variety of new functionality to the Stellar ecosystem — such as real-world financing, leveraged trading, yield products, and new DeFi apps.
 
 **Security**
 
-All Blend lending pools are isolated from one another. So lenders and borrowers are only exposed to the risk of the pool they're using. Additionally, each lending pool has mandatory insurance through the [backstop module](../whitepaper/blend-whitepaper.md#backstop-module).
+All Blend lending pools are isolated from one another. Therefore, lenders and borrowers are only exposed to the risk of the pool they're using. Additionally, each lending pool has mandatory insurance through the [backstop module](../whitepaper/blend-whitepaper.md#backstop-module).
 
 **Capital Efficiency**
 
-Blend's reactive interest rate mechanism ensures that there isn't slack capital in the protocol. Lenders and borrowers can expect to experience relatively efficient rates while using Blend.
+Blend's reactive interest rate mechanism ensures there isn't slack capital in the protocol. Lenders and borrowers can expect to experience relatively efficient rates while using Blend.
 
 **Permissionless**
 
-Anyone can use Blend to Lend or Borrow. But more importantly, anyone can deploy a new lending pool as long as they can attract backstop module depositors. This means that all valuable use cases for Blend should be quickly supported rather than having to go through an arduous governance process.
+Anyone can use Blend to lend or borrow. But more importantly, anyone can deploy a new lending pool as long as they can attract backstop module depositors. This means all valuable use cases for Blend should be quickly supported rather than having to go through an arduous governance process.
 
 ### What are the benefits of Blend for Stellar?
 
@@ -44,7 +44,7 @@ More technical users can also use Blend directly by calling the smart contracts 
 
 ### Does Blend have fees?
 
-Using Blend can incur two kinds of fees:
+Blend users can incur three possible fees:
 
 **Network Fees**
 
@@ -79,7 +79,7 @@ TODO
 
 #### Oracle Risk
 
-Blend's lending pools rely on oracles to price assets accurately. If a pool's oracle stopped functioning - the pool's users could suffer a loss of user funds.
+Blend's lending pools rely on oracles to price assets accurately. If a pool's oracle stopped functioning, the pool's users could suffer a loss of user funds.
 
 #### Asset Risk
 

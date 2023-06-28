@@ -2,9 +2,10 @@
 
 The Backstop Take Rate is the percent of the interest paid by pool borrowers sent to the pool's backstop module depositors. The level it's set at influences the proportion of capital you can expect the backstop module to have in relation to the pool. This correlation results from a higher backstop take rate making depositing in the backstop module more profitable.\
 \
-Here are example backstop take rates for pools of various risk levels using the following formula
+Here are example backstop take rates for pools of various risk levels using the following formula:
 
 $$BackstopInterestRequirement = RequiredTVLCoverage*RequiredInterestMultiple$$\
+\
 $$BackstopTakeRate = \frac{BackstopInterestRequirement}{(1+BackstopInterestRequirement)}$$
 
 #### Low-Risk Pools
@@ -21,7 +22,7 @@ $$BackstopTakeRate = \frac{BackstopInterestRequirement}{(1+BackstopInterestRequi
   * 7.5% of TVL covered
   * Backstop depositors demand a rate of 4x the lender's rate
 * Required take rate of 23.508%
-* Aave V2 would be considered a medium-risk pool\\
+* Aave V2 would be considered a medium-risk pool
 
 #### High-Risk Pools
 
