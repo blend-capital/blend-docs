@@ -159,33 +159,27 @@ This dynamic interest rate model responds more efficiently to changing cost of c
 
 ### Liquidations
 
-In the event a borrower’s outstanding liabilities to a given pool exceed the borrowing capacity of their collateral in that pool, the borrower can be liquidated. Liquidations are performed to reduce the chance a borrower defaults on their loan, causing a permanent loss of lender funds.
+In the event a borrower’s outstanding liabilities to a given pool exceed the borrowing capacity of their collateral in that pool, the borrower can be liquidated. This transfers a portion of the delinquent user's collateral and liability positions to a liquidator's account, where the liquidator can handle them as they wish. Liquidations are performed to reduce the chance a borrower defaults on their loan, causing a permanent loss of lender funds.
 
 Blend uses gentle dutch auctions to liquidate borrowers without over-penalizing them or exposing them to oracle risk.
 
 #### Auction Initiation
 
-Any user can initiate a liquidation auction on an account that has exceeded its borrow capacity for a pool. Liquidation initiators choose user collateral and liabilities involved in the liquidation. The auction will sell the user collateral (the lot of the auction) in return for the user liabilities (the bid of the auction).
-
-However, the protocol imposes the following requirements on the liquidation creator:
-
-1. The value of liabilities repaid must be less than a calculated _Target Liquidation Amount_ to prevent user's from getting over-liquidated.
-2. If all user liabilities are not being repaid, the value of all liabilities repaid must be greater than 90% of the _Target Liquidation Amount_ to increase the likelihood the liquidation removes all excessively borrowed funds.
-3. The value of all collateral sold must be within 125% to 250% of _Target Liquidation Amount_ unless all of the user's collateral is being sold to ensure the gradual dutch auction mechanism can find a valid price.
-
-The _Target Liquidation Amount_ ($TLA$) defines an appropriate volume of liabilities to liquidate based on a liquidation premium, $p$, the collateral being sold, and the liabilities being purchased by the protocol. The $TLA$ aims for the user being liquidated to end up 3% over collateralized according to the protocol. It is calculated by:
+Any user can initiate a liquidation auction on an account that has exceeded its borrow capacity for a pool. Liquidation initiators choose a percent,$L\_p$, of user liabilities to be auctioned off (the bid of the auction). Based on that percentage, the protocol will set a percentage of the user's collateral to also be auctioned (the lot of the auction). The collateral percentage, $C\_p$ is calculated using an estimated liquidator premium, $p$, the excess collateral value a liquidator is expected to demand in order to fill the auction:
 
 $$
 p = \frac{1-\overline{C_f}*\overline{L_f}}{2}+1
 $$
 
 $$
-TLA=\frac{1.03 * L_o - C_o}{1.03 * \overline{L_f}^{(-1)} - p\overline{C_f}}
+C_p = \frac{p*L_p*L_o}{C_o}
 $$
 
 $$
-\begin{align*} \text{where}\\ &L_o=\text{Total value of the user's liabilities outstanding}\\ &C_o=\text{Total value of the user's collateral outstanding}\\ &\overline{L_f}=\text{Weighted average liability factor of the liability being auctioned}\\ &\overline{C_f}=\text{Weighted average collateral factor of the collateral being auctioned}\\ \end{align*}
+\begin{align*} \text{where}\\ &p=\text{Estimated Liquidator Premium}\\ &\overline{L_f}=\text{Average liability factor of the liability positions}\\ &\overline{C_f}=\text{Average collateral factor of the collateral positions}\\&Lo=\text{Total value of the user's liabilities outstanding}\\ &C_o=\text{Total value of the user's collateral outstanding}\\&Lp=\text{Percent of liability positions being auctioned off}\\ &C_p=\text{Percent of collateral positions being auctioned off}\\ \end{align*}
 $$
+
+When creating the liquidation, the protocol requires that the creator inputs an $Lp$ that ensures that if the liquidation is 100% cleared (all liability and collateral positions are transferred to the liquidator), after liquidation, the liquidated user's health factor is between 1.03 and 1.15.
 
 #### Auction Duration
 
@@ -201,7 +195,7 @@ $$
 
 #### Auction Fill
 
-At any point, a liquidator can fill the auction and repay the bid modifier adjusted auction liability in exchange for the lot modifier adjusted auctioned collateral.
+At any point, a liquidator can fill the auction and assume the bid modifier adjusted auction liability as well as the lot modifier adjusted auctioned collateral. After filling the liquidation, the liquidator must ensure their account is in a healthy state with a health factor greater than 1. This means they may need to repay the assumed liabilities or post more collateral.
 
 ### Price Oracles
 
@@ -247,19 +241,13 @@ $$
 PC=A^{0.8} * B^{0.2}
 $$
 
-
-
-
-
-
-
 $$
 \begin{align*} \text{where}\\ &PC=\text{Product Constant Value}\\ &A=\text{Amount of token A (BLND)}\\ &B=\text{Amount of token B (USDC)}\\ \end{align*}
 $$
 
 #### Pool Migration
 
-Due to the immutable nature of standard isolated lending pools, if new parameters are required, a new pool must be deployed, and users must be migrated to it. Migrations are especially urgent if the old pool is using an oracle contract that is being shut down. To migrate users, someone first needs to create the new pool, then inform the backstop module depositors of the old pool what the new pool is, and why they should migrate. Since an outdated parameter could jeopardize backstop module deposits, depositors should be more than happy to migrate. Once they begin the migration process by queueing their deposits for withdrawal, the pool can be turned off using pool management functions. This will force lenders and borrowers to migrate to the new pool to continue their operations.
+Due to the immutable nature of standard isolated lending pools, if new parameters are required, a new pool must be deployed, and users must be migrated to it. Migrations are especially urgent if the old pool is using an oracle contract that is being shut down. To migrate users, someone first needs to create the new pool, then inform the backstop module depositors of the old pool what the new pool is and why they should migrate. Since an outdated parameter could jeopardize backstop module deposits, depositors should be more than happy to migrate. Once they begin the migration process by queueing their deposits for withdrawal, the pool can be turned off using pool management functions. This will force lenders and borrowers to migrate to the new pool to continue their operations.
 
 ### BLND Emissions
 
@@ -275,7 +263,7 @@ Users who lend to or borrow from active Isolated Pools are eligible to receive a
 
 #### Reward Zone
 
-In order for a lending pool to receive emissions, it must be part of the reward zone. The reward zone is a subset of pools with the largest backstop modules; at protocol release, it will include 10 pools and add 1 pool every 97 days. A pool in the reward zone can be replaced at any point if a pool outside the reward zone has more backstop deposits. To be added to the reward zone, pools need to have the status Active.
+For a lending pool to receive emissions, it must be part of the reward zone. The reward zone is a subset of pools with the largest backstop modules; at protocol release, it will include 10 pools and add 1 pool every 97 days. A pool in the reward zone can be replaced at any point if a pool outside the reward zone has more backstop deposits. To be added to the reward zone, pools must have the status Active.
 
 #### Emissions as Balancing Force
 
@@ -283,9 +271,9 @@ Distributing emissions to lending pools creates a necessary correlation between 
 
 #### Emission Migration
 
-The emission contract is not upgradeable and is only responsible for minting 1 BLND per second. Thus, all protocol logic regarding emissions distribution is the responsibility of the backstop module. In the event a new version of the protocol is released, the emission contract has an upgrade function that will redirect emissions from the old backstop module to the new contract. The upgrade function will only change the emission destination if the new contract has more BLND than the current backstop module. Thus, the new contract needs to convince the current backstop module depositors to migrate.
+The emission contract is not upgradeable and is only responsible for minting 1 BLND per second. Thus, all protocol logic regarding emissions distribution is the responsibility of the backstop module. If a new version of the protocol is released, the emission contract has an upgrade function that will redirect emissions from the old backstop module to the new contract. The upgrade function will only change the emission destination if the new contract has more BLND than the current backstop module. Thus, the new contract needs to convince the current backstop module depositors to migrate.
 
-In the event a new backstop module contract is set, all currently existing pools will no longer receive emissions until they perform a backstop module update. After this is completed, the new backstop module assumes the responsibility of first-loss capital and the pool will again start receiving emissions.
+If a new backstop module contract is set, all currently existing pools will no longer receive emissions until they perform a backstop module update. After this is completed, the new backstop module assumes the responsibility of first-loss capital and the pool will again start receiving emissions.
 
 #### Emissions Drop
 
