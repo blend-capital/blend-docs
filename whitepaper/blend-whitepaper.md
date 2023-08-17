@@ -197,6 +197,10 @@ $$
 
 At any point, a liquidator can fill the auction and assume the bid modifier adjusted auction liability as well as the lot modifier adjusted auctioned collateral. After filling the liquidation, the liquidator must ensure their account is in a healthy state with a health factor greater than 1. This means they may need to repay the assumed liabilities or post more collateral.
 
+#### Partial Liquidations
+
+Blend supports partial liquidations - liquidators can opt to partially fill liquidation auctions, in which case the auction will be updated to reflect the remaining amounts to be liquidated. This lowers capital requirements for liquidating, allowing more parties to participate.
+
 ### Price Oracles
 
 Price oracles are used extensively to determine whether a borrower’s outstanding and potential liabilities are sufficiently collateralized. Each isolated lending pool specifies a price oracle to use on creation. The pool creator can select any deployed oracle contract as long as the oracle implements the expected BlendOracle trait, and all assets supported by the pool can fetch USD-denominated prices from the oracle.
