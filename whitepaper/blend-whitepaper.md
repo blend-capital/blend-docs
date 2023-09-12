@@ -29,7 +29,7 @@ Blend represents a new, more primitive approach to decentralized money market pr
 
 ### System Diagram
 
-TODO
+<figure><img src="../.gitbook/assets/Blend System Diagram@3x.png" alt=""><figcaption></figcaption></figure>
 
 ### Isolated Lending Pools
 
