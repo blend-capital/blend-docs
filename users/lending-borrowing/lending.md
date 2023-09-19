@@ -14,10 +14,6 @@ Lenders can withdraw lent assets from the protocol at any time as long as two co
   * If the pool does not have sufficient liquidity, the interest rate model will ensure liquidity increases. Blend's interest rate model raises interest if an asset is overutilized, ensuring that either borrowers repay, are liquidated, or more lenders enter the pool to receive the high interest rates. To learn more, see the [interest rate section](../../whitepaper/blend-whitepaper.md#interest-rates) of the whitepaper.
 * The lender must be in good standing with the pool post-withdrawal — lenders have the option of using lent funds as collateral to borrow other pool assets. If they choose to do so, they are only allowed to withdraw lent funds if the withdrawal does not cause them to exceed their [borrow limit](borrowing.md#how-much-can-users-borrow). Otherwise, they must repay the borrowed funds before they can withdraw.
 
-### What are pool tokens?
-
-If lenders choose not to use the funds they lent as collateral, they will receive pool tokens from the lending pool which represent their deposit. These tokens are fungible, so users can transfer them to other network participants, use them in liquidity pools, and more.
-
 ### Why would users lend on Blend?
 
 In exchange for lending using Blend lending pools, lenders receive interest from borrowers and BLND issuance from the protocol (if their pool is in the reward zone and is allocating emissions to lenders of the asset the user is lending). In addition, when lending on Blend, users retain control of their funds. The protocol is decentralized, trust-free, and non-custodial. Only the protocol smart contracts have control over user funds, and users can withdraw their funds at any time.
