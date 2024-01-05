@@ -135,22 +135,22 @@ $$
 
 _Figure 1: Interest rate curve examples for various asset classes where low curve has (U\_T=0.9, R\_1=0.03, R\_2=0.2, R\_3=1), medium curve has (U\_T=0.75, R\_1=0.05, R\_2=0.5, R\_3=1.5), high curve has (U\_T=0.6, R\_1=0.07, R\_2=1, R\_3=2), and the Rate Modifier is 1._
 
-The Rate Modifier is a reactive value that adjusts the interest rate the pool charges for borrowing the asset to achieve a target utilization rate. The modifier slowly sums the error in utilization over blocks, compensating for any steady-state error as a result of the user-defined initial interest rates. The value is bounded between _\[0.1, 100]_ to limit the effective interest rate change possible and avoid potential integral windup that could cause instability. The updated modifier is calculated as follows:
+The Rate Modifier is a reactive value that adjusts the interest rate the pool charges for borrowing the asset to achieve a target utilization rate. The modifier slowly sums the error in utilization over time, compensating for any steady-state error as a result of the user-defined initial interest rates. The value is bounded between _\[0.1, 100]_ to limit the effective interest rate change possible and avoid potential integral windup that could cause instability. The updated modifier is calculated as follows:
 
 $$
-Util Rate Error = \Delta blocks * (U_T-U)
+Util Rate Error = \Delta seconds * (U_T-U)
 $$
 
 $$
 Rate Modifier = Util Rate Error * Reactivity Constant + Rate Modifier
 $$
 
-The Target Utilization Ratio and Reactivity Constant are constant values provided on pool creation for each asset supported by the pool. They are validated such that Target Utilization Rate is within _\[0.5, 0.95]_ and Reactivity Constant is within _\[10e-6, 10e-4]_.
+The Target Utilization Ratio and Reactivity Constant are constant values provided on pool creation for each asset supported by the pool. They are validated such that Target Utilization Rate is within _\[0, 0.95]_ and Reactivity Constant is within _\[0, 10e-4]_.
 
-Interest rates are accrued discretely over the blocks since the last accrual has occurred. The following formula depicts how a loan value will get updated for a given interest rate, $R$:
+Interest rates are accrued discretely over the seconds since the last accrual has occurred. The following formula depicts how a loan value will get updated for a given interest rate, $R$:
 
 $$
-Loan Value = Loan Value * (1 + R * \frac{\Delta blocks}{Blocks Per Year})
+Loan Value = Loan Value * (1 + R * \frac{\Delta seconds}{Seconds Per Year})
 $$
 
 Accruing discretely significantly lessens the gas required to accrue a given liability, and only slightly underestimates the full liability compared to a continuously compounding loan over a ten year time frame. Thus, it is an appropriate trade off for keeping contract calls cheap.
