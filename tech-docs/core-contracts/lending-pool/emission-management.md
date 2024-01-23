@@ -14,6 +14,6 @@ Distribution is carried out through 3 steps:
    - Calls `gulp_pool_emissions()` on the backstop - approving approving the pool to transfer it's allocated BLND from the backstop to the pool.
    - Sets EPS for every pool reserve.
 
-### Claiming EMissions
+### Claiming Emissions
 
 Users can claim their share of emissions by calling `claim_emissions()` and inputting the reserves that they want to claim emissions for.

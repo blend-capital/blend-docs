@@ -16,7 +16,7 @@ Pools can be added to the Reward Zone by calling the `add_reward()` function.
 
 If the reward zone has enough space, the pool will be added, if it doesn't, the pool will replace the pool specified by the `to_remove` parameter in the `add_reward()` function if it has more backstop tokens than the pool being replaced.
 
-Note: If the pool being added to the reward zone has not met the minimum backstop threshold(link) the function will fail.
+Note: If the pool being added to the reward zone has not met the minimum backstop threshold the function will fail.
 
 Note: If the to_remove pool is not in the reward zone, `add_reward()` will fail.
 

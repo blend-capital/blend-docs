@@ -6,14 +6,12 @@ Pools interact with backstop deposits allocated to them by drawing from the depo
 
 Pools draw from backstop deposits allocated to them using the `draw()` function. This transfers the requested amount of backstop tokens from a specified pool's backstop deposits to a specified recipient and reduces the pool's `total_tokens` by the amount drawn.
 
+This function is used to allow backstop depositors to cover bad debt it has accumulated.
+
 Note: The draw function must be called by the specified pool or it will fail.
 
 ### Donating
 
-Pool donations are a two step process
+Any party can donate to backstop depositors using the `donate()` function. This transfers the specified amount of backstop tokens from the caller to the backstop contract and increases the value of the the deposits allocated to the pool specified by the donator.
 
-1. Pool's call `donate_usdc()` which transfers usdc to the backstop module and adds it to the input pool's stored `usdc_balance`
-
-Note: the input pool must have been deployed by the pool factory or the `donate_usdc()` function will fail
-
-2. Any party calls `draw_usdc()`
+This function is used to allow pools to donate a percentage of interest to backstop depositors.
