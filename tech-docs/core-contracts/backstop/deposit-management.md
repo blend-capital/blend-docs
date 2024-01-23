@@ -7,7 +7,7 @@ The backstop contract allows user's to deposit backstop tokens and allocate them
 User's deposit backstop tokens into the backstop contract using the `deposit` function which accepts a deposit amount and a pool address. The specified amount will be sent to the backstop contract, and recorded as a user's deposit in the specified pool. The deposit amount is accounted for as a number of shares calculated as:
 
 $$
-shares_issued = deposit_amount * \frac{total_shares}{total_tokens}
+SharesIssued = DepositAmount * \frac{TotalShares}{TotalTokens}
 $$
 
 The number of backstop tokens each share is worth increases when the associated pool pays interest to the backstop and decreases when deposit's are used to cover bad debt realized by the pool as these change the pool's total_tokens without changing it's total_shares.

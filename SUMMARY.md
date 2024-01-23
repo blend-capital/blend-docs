@@ -36,7 +36,7 @@
 
   - [Emitter](tech-docs/core-contracts/emitter/README.md)
     - [Backstop Management](tech-docs/core-contracts/emitter/backstop-management.MD)
-    - [Backstop Management](tech-docs/core-contracts/emitter/blend-distribution.MD)
+    - [Blend Distribution](tech-docs/core-contracts/emitter/blend-distribution.MD)
   - [Backstop](tech-docs/core-contracts/backstop/README.md)
     - [Deposit Management](tech-docs/core-contracts/backstop/deposit-management.md)
     - [Drawing and Donating](tech-docs/core-contracts/backstop/drawing-and-donating.md)
@@ -48,9 +48,8 @@
   - [Lending Pool](tech-docs/core-contracts/lending-pool/README.md)
 
     - [Fund Management](tech-docs/core-contracts/lending-pool/fund-management.md)
-    - [Fund Management](tech-docs/core-contracts/lending-pool/bad-debt-management.md)
+    - [Liquidation Management](tech-docs/core-contracts/lending-pool/liquidation-management.md)
     - [Emission Management](tech-docs/core-contracts/lending-pool/emission-management.md)
-    - [Interest Management](tech-docs/core-contracts/lending-pool/interest-rate-management.md)
+    - [Interest Management](tech-docs/core-contracts/lending-pool/interest-management.md)
     - [Pool Management](tech-docs/core-contracts/lending-pool/pool-management.md)
     - [Bad Debt Management](tech-docs/core-contracts/lending-pool/bad-debt-management.md)
-    - [Pool Status Management](tech-docs/core-contracts/lending-pool/pool-status-management.md)
