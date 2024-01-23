@@ -1,4 +1,4 @@
-## Overview
+## Fund Management
 
 The lending pool allows user's and liquidators to manipulate the user funds it stores.
 

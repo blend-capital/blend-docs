@@ -1,4 +1,4 @@
-## Overview
+## Lending Pool Deployment
 
 The pool factory contracts primary responsibility is to deploy and initialize new lending pool contracts
 

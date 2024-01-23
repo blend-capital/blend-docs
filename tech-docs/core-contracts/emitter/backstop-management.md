@@ -1,4 +1,4 @@
-## Overview
+## Backstop Management
 
 The Emitter contract defines the backstop contract address that will receive blend tokens. It can switch this address through an emissions swap. This allows the backstop contract to be "upgraded" while retaining it's immutability.
 

@@ -1,4 +1,4 @@
-## Overview
+## Blend Distribution
 
 The emitter is the admin of the Blend token and is responsible for minting and emitting Blend to the current backstop.
 

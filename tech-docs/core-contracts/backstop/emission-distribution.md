@@ -1,4 +1,4 @@
-## Overview
+## Emission Distribution
 
 The backstop contract is responsible for distributing emissions to backstop depositors and lending pools after it receives them from the emitter contract.
 

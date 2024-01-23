@@ -1,4 +1,4 @@
-## Overview
+## Drawing from and Donating to Deposits
 
 Pools interact with backstop deposits allocated to them by drawing from the deposits to cover bad debt and donating a percentage of interest to the deposits.
 
