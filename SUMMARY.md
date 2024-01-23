@@ -35,8 +35,8 @@
 - [Core Contracts](tech-docs/core-contracts/README.md)
 
   - [Emitter](tech-docs/core-contracts/emitter/README.md)
-    - [Backstop Management](tech-docs/core-contracts/emitter/backstop-management.MD)
-    - [Blend Distribution](tech-docs/core-contracts/emitter/blend-distribution.MD)
+    - [Backstop Management](tech-docs/core-contracts/emitter/backstop-management.md)
+    - [Blend Distribution](tech-docs/core-contracts/emitter/blend-distribution.md)
   - [Backstop](tech-docs/core-contracts/backstop/README.md)
     - [Deposit Management](tech-docs/core-contracts/backstop/deposit-management.md)
     - [Drawing and Donating](tech-docs/core-contracts/backstop/drawing-and-donating.md)

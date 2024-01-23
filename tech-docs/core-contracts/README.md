@@ -16,7 +16,7 @@ erDiagram
     POOL-FACTORY ||--|{ LENDING-POOL : defines
 ```
 
-The backstop address can be swapped through a backstop swap(link here).
+The backstop address can be swapped through a backstop swap.
 
 ### Backstop Contract
 

@@ -22,3 +22,7 @@ The lending pool contract is Blend's main user facing contract, it stores user f
 - Pool Emission Management
   - Distributing Earned Emissions
   - Facilitating Emission Claims
+
+As this is the main user facing contract - it will be accessible at [blend.capital](https://www.blend.capital).
+
+[Interface Docs Here](https://docs.rs/blend-interfaces/0.0.1/blend_interfaces/pool/index.html)
