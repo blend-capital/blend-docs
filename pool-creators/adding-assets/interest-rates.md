@@ -12,19 +12,19 @@ $$UtilizationRate = \frac{TotalBorrowed}{TotalSupplied}$$
 
 An asset's base interest rate is dynamic - it's based on a three-tier utilization curve which is calculated with the following parameters (the parameters are set by the pool creator and modifiable by the [pool admin](../pool-management.md#pool-admin)).
 
-#### Target Utilization (U\_T)
+#### Target Utilization (U_T)
 
 The target percentage of an asset’s supply that should be borrowed. This should be set high for assets that are intended to be borrowed and low for assets that are intended to be used as collateral. This value is stored with 7 decimals.
 
-#### Rate Slope 1 (R\_1)
+#### Rate Slope 1 (R_1)
 
 The rate at which an asset's borrowing interest rate increases when it's below its target utilization. This value has 7 decimals.
 
-#### Rate Slope 2 (R\_2)
+#### Rate Slope 2 (R_2)
 
 The rate at which an asset's interest rate increases when it's above its target utilization. This value has 7 decimals.
 
-#### Rate Slope 3 (R\_3)
+#### Rate Slope 3 (R_3)
 
 The rate at which an asset's interest rate increases when it's above 95% utilization. An asset should never be above 95% utilization as it causes liquidity issues for lenders; thus, this slope should typically be set fairly high. This value has 7 decimals.
 
@@ -38,12 +38,12 @@ Sample base interest rates:
 
 <figure><img src="../../.gitbook/assets/interest rates (1).png" alt=""><figcaption></figcaption></figure>
 
-* IR\_1 is a low-utilization asset with:&#x20;
-  * U\_T= 0.5 | R\_1 = 0.05 | R\_2 = 0.25 | R\_3 = 0.5
-* IR\_2 is a high-utilization asset with:
-  * U\_T = 0.85 | R\_1 = 0.05 | R\_2 = 0.15 | R\_3 = 0.5
-* IR\_3 is a fixed-rate asset with:
-  * U\_T = 0.01 | R\_1 = 0.05 | R\_2 = 0 | R\_3 = 0
+- IR_1 is a low-utilization asset with:&#x20;
+  - U_T= 0.5 | R_1 = 0.05 | R_2 = 0.25 | R_3 = 0.5
+- IR_2 is a high-utilization asset with:
+  - U_T = 0.85 | R_1 = 0.05 | R_2 = 0.15 | R_3 = 0.5
+- IR_3 is a fixed-rate asset with:
+  - U_T = 0.01 | R_1 = 0.05 | R_2 = 0 | R_3 = 0
 
 Desmos link: [https://www.desmos.com/calculator/hzqgduyymj](https://www.desmos.com/calculator/hzqgduyymj)&#x20;
 
@@ -68,16 +68,16 @@ $$
 The utilization rate error is the accumulation of how far off an assets utilization rate was from its target
 
 $$
-Util Rate Error = \Delta blocks * (U_T-U)
+Util Rate Error = \Delta seconds * (U_T-U)
 $$
 
 #### Reactivity Constant
 
 A value that governs how quickly interest rates adjust based on assets' target utilization. This should be set based on how quickly users are expected to react to market inefficiencies. Additionally, it should also be set higher for assets with high-utilization targets to prevent them from experiencing excessive rate volatility and lower for low-utilization target assets.
 
-For example, a reactivity constant of 0.0000002 will cause interest to double in approximately 2 months if the utilization rate is steadily 10% higher than it should be, making it a good choice for high utilization target assets.
+For example, a reactivity constant of 0.00000002 will cause interest to double in approximately 2 months if the utilization rate is steadily 10% higher than it should be, making it a good choice for high utilization target assets.
 
-$$518400_{seconds}*0.0000002_{ReactivityConstant}*0.1_{UtilizationError}*10_{ErrorScalar}=1.0368$$
+$$518400_{seconds}*0.00000002_{ReactivityConstant}*0.1_{UtilizationError}*100_{ErrorScalar}=1.0368$$
 
 $$RateModifier = 1.0368 + 1=2.0368$$
 

@@ -36,29 +36,31 @@ The backstop requirements to set specific pool status are as follows:
 
 #### Active:
 
-* Backstop deposits must exceed the minimum backstop requirement
+- Backstop deposits must exceed the minimum backstop requirement
 
 \-and-
 
-* Less than 25% of backstop deposits are queued for withdrawal.
+- Less than 25% of backstop deposits are queued for withdrawal.
 
 #### On-Ice:
 
-* Backstop deposit fall below the minimum deposit requirement
+- Backstop deposit fall below the minimum deposit requirement
 
 \-or-
 
-* Over 25% of backstop deposits are queued for withdrawal.
+- Over 25% of backstop deposits are queued for withdrawal.
 
 #### Frozen:
 
-* Over 50% of backstop deposits are queued for withdrawal.
+- Over 50% of backstop deposits are queued for withdrawal.
 
 When a pool admin sets the pool to a more restrictive status, the backstop state cannot be used to set a less restrictive state. Likewise, pool admins cannot set a less restrictive status if the pool's backstop's state does not meet the requirements for that status.
 
 ### Initial Pool Status
 
-Pools start in the On-Ice status. This is to limit the creation of unsafe pools by requiring that some insurance capital be put forward before a pool can be used. The rationale here is high-risk pools are unlikely to have many people willing to insure them.
+Pools start in the Setup status which disallows all pool actions. This is to allow the to finalize setup by adding assets to the pool before user's begin using it. After setup is finished the admin can use the `set_status()` function to set the status to On-Ice, allowing user's to deposit but not borrow. Pool creators should note that after they move the pool out of the Setup status there will be a mandatory 7 day queue to modify asset parameters or add new assets. This is to prevent pool admins from changing asset parameters or adding new assets without giving users a chance to exit the pool or backstops a chance to queue withdrawals.
+
+Admin's are not immediately able to set pool's to active to limit the creation of unsafe pools by requiring that some insurance capital be put forward before a pool can be used. The rationale here is high-risk pools are unlikely to have many people willing to insure them.
 
 ### Pool Migration
 
