@@ -1,28 +1,9 @@
-## Overview
+# Lending Pool
 
-The lending pool contract is Blend's main user facing contract, it stores user funds and facilitates:
+### Lending Pool Contract Responsibilities
 
-- User Fund Management
-  - Supplying
-  - Withdrawing
-  - Supplying Collateral
-  - Withdrawing Collateral
-  - Borrowing
-  - Repaying
-  - Filling Liquidations
-- Pool Management
-  - Asset Parameter Management
-  - Pool Status Updates
-- Bad Debt Management
-  - Bad Debt Assignment
-  - Bad Debt Socialization
-- Liquidation Management
-  - Liquidation Initiation
-  - Liquidation Cancellation
-- Pool Emission Management
-  - Distributing Earned Emissions
-  - Facilitating Emission Claims
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td></td><td></td><td>User Fund Management</td><td><a href="fund-management.md">fund-management.md</a></td></tr><tr><td></td><td>Pool Management</td><td></td><td><a href="pool-management.md">pool-management.md</a></td></tr><tr><td></td><td></td><td>Bad Debt Management</td><td><a href="bad-debt-management.md">bad-debt-management.md</a></td></tr><tr><td>Liquidation Management</td><td></td><td></td><td><a href="liquidation-management.md">liquidation-management.md</a></td></tr><tr><td>Pool Emission Management</td><td></td><td></td><td><a href="emission-management.md">emission-management.md</a></td></tr><tr><td></td><td>Interest Management</td><td></td><td><a href="interest-management.md">interest-management.md</a></td></tr></tbody></table>
 
-As this is the main user facing contract - it will be accessible at [blend.capital](https://www.blend.capital).
+The Lending Pool is Blend's main user-facing contract - it will be accessible at [blend.capital](https://www.blend.capital)
 
-[Interface Docs Here](https://docs.rs/blend-interfaces/0.0.1/blend_interfaces/pool/index.html)
+[Interface Docs Here](https://docs.rs/blend-interfaces/0.0.1/blend\_interfaces/pool/index.html)

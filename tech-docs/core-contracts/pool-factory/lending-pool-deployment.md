@@ -1,8 +1,8 @@
-## Lending Pool Deployment
+# Lending Pool Deployment
 
-The pool factory contracts primary responsibility is to deploy and initialize new lending pool contracts
+The Pool Factory contracts primary responsibility is to deploy and initialize new lending pool contracts
 
-### Deployment
+## Deployment
 
 Lending pools are deployed using the `deploy()` function. This will deploy a new lending pool contract using the hash stored on the pool factory, and initialize it with the input parameters.
 

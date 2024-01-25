@@ -1,11 +1,9 @@
-## Overview
+# Emitter
 
-The emitter contract is responsible for:
+### Emitter Contract Responsibilities
 
-Designating and modifying the protocol's backstop contract: this is set on Emitter initialization and can later be changed throw an emission fork.
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Defining Blend's Backstop Contract</td><td></td><td></td><td><a href="backstop-management.md">backstop-management.md</a></td></tr><tr><td>Distributing Blend Tokens</td><td></td><td></td><td><a href="blend-distribution.md">blend-distribution.md</a></td></tr></tbody></table>
 
-Distributing Blend to the backstop contract and to drop recipients.
+Typically users will not directly interact with the emitter contract.
 
-Typically user's will not directly interact with the emitter contract.
-
-[Interface Docs Here](https://docs.rs/blend-interfaces/0.0.1/blend_interfaces/emitter/index.html)
+[Interface Docs Here](https://docs.rs/blend-interfaces/0.0.1/blend\_interfaces/emitter/index.html)

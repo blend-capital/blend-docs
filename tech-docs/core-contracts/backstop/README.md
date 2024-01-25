@@ -1,13 +1,9 @@
-## Overview
+# Backstop
 
-The backstop contract is responsible for:
+### Backstop Contract Responsibilities
 
-Managing backstop deposits.
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Managing Backstop Deposits</td><td></td><td></td><td><a href="deposit-management.md">deposit-management.md</a></td></tr><tr><td>Enabling pools to draw from and donate to backstop deposits</td><td></td><td></td><td><a href="drawing-and-donating.md">drawing-and-donating.md</a></td></tr><tr><td></td><td>Distributing received Blend emissions</td><td></td><td><a href="emission-distribution.md">emission-distribution.md</a></td></tr></tbody></table>
 
-Enabling pools to draw backstop funds to cover bad debt and to donate interest to backstop depositors.
+The backstop contract is user-facing - although users will be more sophisticated than lending pool users. It will be accessible at [blend.capital](https://www.blend.capital)
 
-Managing Blend token distribution to backstop depositors and lending pool contracts.
-
-The backstop contract is user facing - although users will be more sophisticated than lending pool users. It will be accessible at [blend.capital](https://www.blend.capital).
-
-[Interface Docs Here](https://docs.rs/blend-interfaces/0.0.1/blend_interfaces/backstop/index.html)
+[Interface Docs Here](https://docs.rs/blend-interfaces/0.0.1/blend\_interfaces/backstop/index.html)
