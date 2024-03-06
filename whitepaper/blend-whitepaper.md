@@ -11,6 +11,8 @@
   - [Interest Rates](blend-whitepaper.md#interest-rates)
   - [Liquidations](blend-whitepaper.md#liquidations)
 - [Governance and Decentralization](blend-whitepaper.md#governance-and-decentralization)
+  - [Pool Management](blend-whitepaper.md#pool-management)
+  - [BLND Emissions](blend-whitepaper.md#blnd-emissions)
 - [References](blend-whitepaper.md#references)
 
 ## Abstract

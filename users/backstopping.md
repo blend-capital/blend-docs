@@ -24,7 +24,7 @@ A weighted LP is a LP that has unequal values of the tokens it holds. Traditiona
 
 ### How do User's Backstop Pools?
 
-Users can backstop pools by depositing [BLND:USDC 80:20 weighted liquidity pool shares](backstopping.md#what-are-blnd-usdc-80-20-liquidity-pool-shares) in the pools backstop module. They should note that if they wish to withdraw these deposits, they will have to queue them for withdrawal and wait for a 30-day withdrawal queue period to end.&#x20;
+Users can backstop pools by depositing [BLND:USDC 80:20 weighted liquidity pool shares](backstopping.md#what-are-blnd-usdc-80-20-liquidity-pool-shares) in the pools backstop module. They should note that if they wish to withdraw these deposits, they will have to queue them for withdrawal and wait for a 21-day withdrawal queue period to end.&#x20;
 
 ### What are the Risks of Backstopping?
 

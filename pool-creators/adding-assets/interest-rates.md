@@ -16,6 +16,10 @@ An asset's base interest rate is dynamic - it's based on a three-tier utilizatio
 
 The target percentage of an asset’s supply that should be borrowed. This should be set high for assets that are intended to be borrowed and low for assets that are intended to be used as collateral. This value is stored with 7 decimals.
 
+#### Base Rate (R_base)
+
+The reserve's minimum interest rate. This value has 7 decimals.
+
 #### Rate Slope 1 (R_1)
 
 The rate at which an asset's borrowing interest rate increases when it's below its target utilization. This value has 7 decimals.
