@@ -8,6 +8,7 @@
 
 ***
 
+* [🕵️‍♂️ Audits](audits.md)
 * [🧑‍🏭 Github](github.md)
 
 ## 👥 Users
