@@ -44,4 +44,4 @@ If an assets utilization ratio is too high, there may not be sufficient liquidit
 
 ### Do Lenders Earn BLND Emissions?
 
-Lenders earn BLND emissions if their pool is in the reward zone and the pool creator allocated emissions to lenders of the asset the user is lending. They may claim these emissions at any time at which point they are deposited into the 80:20 BLND:USDC liquidity pool and deposited into the pools backstop module on behalf of the user.
+Lenders earn BLND emissions if their pool is in the reward zone and the pool creator allocated emissions to lenders of the asset the user is lending. They may claim these emissions at any time at which point.

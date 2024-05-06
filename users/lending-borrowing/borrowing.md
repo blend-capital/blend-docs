@@ -67,5 +67,5 @@ To learn more about how Blend calculates interest rates, see the [interest rate 
 
 ### Do Borrowers Earn BLND Emissions?
 
-Borrowers earn BLND emissions if their pool is in the reward zone, and the pool creator allocated emissions to borrowers of the asset the user is borrowing. They may claim these emissions at any time, at which point the earned BLND is deposited into the 80:20 BLND:USDC liquidity pool and deposited into the pool's backstop module on behalf of the user.
+Borrowers earn BLND emissions if their pool is in the reward zone, and the pool creator allocated emissions to borrowers of the asset the user is borrowing. They may claim these emissions at any time.
 

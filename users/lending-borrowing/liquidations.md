@@ -1,6 +1,6 @@
 # Liquidations
 
-In the case that a user's account becomes delinquent because they exceed their [borrow limit](broken-reference), they can be liquidated. This means their positions will be transferred to another Blend user who will then either close them or re-collateralize them.
+In the case that a user's account becomes delinquent because they exceed their [borrow limit,](borrowing.md) they can be liquidated. This means their positions will be transferred to another Blend user who will then either close them or re-collateralize them.
 
 ### How do Blend Liquidations Work?
 

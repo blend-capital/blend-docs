@@ -27,4 +27,4 @@ TODO
 
 #### Well Known Oracles
 
-TODO
+* [https://reflector.network/](https://reflector.network/)

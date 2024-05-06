@@ -4,9 +4,9 @@ Pool management encompasses modifying pool status to freeze or unfreeze pools â€
 
 ### Pool Admin
 
-Pools may set a designated admin that has the authority to change pool status or update asset risk/interest rate parameters.&#x20;
+Pools may set a designated admin that has the authority to change pool status or update asset risk/interest rate parameters.
 
-Pools with admins are considered owned pools. Alternatively, the pool's admin address can be set to a dead address, which makes the pool immutable, although its status can still be changed by the backstop module.&#x20;
+Pools with admins are considered owned pools. Alternatively, the pool's admin address can be set to a dead address, which makes the pool immutable, although its status can still be changed by the backstop module.
 
 Pools without admins are standard pools. Standard pools are more decentralized and trustless than owned pools but lack the flexibility some pool creators may desire. We should note that an admin address must still be supplied to create and set up a pool. After the pool is created, the admin should change the admin address to a dead address to make the pool standard.\
 \
@@ -36,23 +36,23 @@ The backstop requirements to set specific pool status are as follows:
 
 #### Active:
 
-- Backstop deposits must exceed the minimum backstop requirement
+* Backstop deposits must exceed the minimum backstop requirement
 
 \-and-
 
-- Less than 25% of backstop deposits are queued for withdrawal.
+* Less than 50% of backstop deposits are queued for withdrawal.
 
 #### On-Ice:
 
-- Backstop deposit fall below the minimum deposit requirement
+* Backstop deposit fall below the minimum deposit requirement
 
 \-or-
 
-- Over 25% of backstop deposits are queued for withdrawal.
+* Over 50% of backstop deposits are queued for withdrawal.
 
 #### Frozen:
 
-- Over 50% of backstop deposits are queued for withdrawal.
+* Over 75% of backstop deposits are queued for withdrawal.
 
 When a pool admin sets the pool to a more restrictive status, the backstop state cannot be used to set a less restrictive state. Likewise, pool admins cannot set a less restrictive status if the pool's backstop's state does not meet the requirements for that status.
 
