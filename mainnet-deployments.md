@@ -31,7 +31,7 @@ There are mainnet deployments of blend and blend adjacent smart contracts at the
   * Comet Contract (BLND:USDC liquidity pool)
     * ### [CAS3FL6TLZKDGGSISDBWGGPXT3NRR4DYTZD7YOD3HMYO6LTJUVGRVEAM](https://stellar.expert/explorer/public/contract/CAS3FL6TLZKDGGSISDBWGGPXT3NRR4DYTZD7YOD3HMYO6LTJUVGRVEAM)
   * Backstop Bootstrapper Contract
-    * ### [CA4WP2X2TRLAPIVYRSFBVD34UYE33AZB5MREW232Y35BFF6R63N5MUQM](https://stellar.expert/explorer/public/contract/CA4WP2X2TRLAPIVYRSFBVD34UYE33AZB5MREW232Y35BFF6R63N5MUQM)
+    * ### TBD
 
 ## Blend App TOS
 
