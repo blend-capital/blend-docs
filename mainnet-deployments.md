@@ -5,8 +5,10 @@ Blend was deployed to mainnet!
 ### User Interfaces
 
 A version of the Blend UI is deployed to IPFS and can be accessed via\
-[https://mainnet.blend.capital](https://mainnet.blend.capital/)\
-The IPFS hash of the deployment is: bafybeics5obie5jghiqrk4cpzn75r7crkardqaxemeq637n45yvxhics5u
+[https://mainnet.blend.capital](https://mainnet.blend.capital/)
+
+\
+IPFS CID: `bafybeibl33mxeazii5ferx4djztekafvlxqe2bvnphf3u2wqecyqrtbsoq`
 
 ### Mainnet Smart Contract Addresses
 
