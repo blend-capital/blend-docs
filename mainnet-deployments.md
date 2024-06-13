@@ -8,7 +8,7 @@ A version of the Blend UI is deployed to IPFS and can be accessed via\
 [https://mainnet.blend.capital](https://mainnet.blend.capital/)
 
 \
-IPFS CID: `bafybeibl33mxeazii5ferx4djztekafvlxqe2bvnphf3u2wqecyqrtbsoq`
+IPFS CID: [https://github.com/blend-capital/blend-ui/releases](https://github.com/blend-capital/blend-ui/releases)
 
 ### Mainnet Smart Contract Addresses
 

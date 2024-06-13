@@ -2,6 +2,14 @@
 
 Pool creators use the following parameters to control asset risk. These parameters must be set for each asset in the pool.
 
+{% hint style="danger" %}
+**Poorly configured risk parameters can lead to blocked liquidations!**
+
+Our liquidation engine is bad at liquidating users who are about to enter a bad-debt position (users that require liquidation of more than 99% of their position but less than 100%)
+
+As a result, pools that allow very high leverage with low volatility assets (think stablecoin leverage-focused pools) should either avoid adding support for low collateral factor assets (which allow users to attempt to force this scenario) or limit max position size to 2
+{% endhint %}
+
 ### Collateral Factor
 
 An asset's collateral factor modifies the asset value when used as collateral. Asset collateral factors must be set to less than or equal to 1.
