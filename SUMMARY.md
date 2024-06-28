@@ -35,6 +35,7 @@
 * [Selecting an Oracle](pool-creators/selecting-an-oracle.md)
 * [Setting Backstop Take Rate](pool-creators/setting-backstop-take-rate.md)
 * [Setting Max Positions](pool-creators/setting-max-positions.md)
+* [Backstop Bootstrapping](pool-creators/backstop-bootstrapping.md)
 
 ## 📚 Tech Docs
 
