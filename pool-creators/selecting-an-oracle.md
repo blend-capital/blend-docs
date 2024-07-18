@@ -4,9 +4,15 @@ Oracles are smart contracts that publish off-chain data on-chain. Blend pools us
 \
 Pool creators must set a pool's oracle contract when they create a pool. This must be a single contract that can report prices for all assets in the pool.
 
+Oracles must conform to the SEP-40 oracle standard\
+[https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0040.md](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0040.md)
+
 ### Oracle Adapters
 
 When a generalized oracle is insufficient for a pool, i.e. it doesn't support all assets the pool needs prices for, the pool creator may need to use an oracle adaptor. An oracle adaptor is a custom oracle contract that uses custom logic to aggregate multiple oracle feeds or impose desired behavior, such as reporting TWAP prices.
+
+**Sample Oracle Adapter:**\
+[https://github.com/blend-capital/oracle-aggregator](https://github.com/blend-capital/oracle-aggregator)
 
 #### Types of Price Feeds
 
