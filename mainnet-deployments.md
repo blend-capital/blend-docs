@@ -1,6 +1,6 @@
 # 🚀 Deployments
 
-Blend was deployed to mainnet!
+Blend is deployed on both Stellar mainnet and testnet!
 
 ### User Interfaces
 
