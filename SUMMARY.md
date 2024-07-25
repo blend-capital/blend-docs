@@ -8,7 +8,7 @@
 
 ***
 
-* [🚀 Mainnet Deployments](mainnet-deployments.md)
+* [🚀 Deployments](deployments.md)
 * [🕵️‍♂️ Audits](audits.md)
 * [🧑‍🏭 Github](github.md)
 
