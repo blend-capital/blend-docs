@@ -36,6 +36,7 @@
 * [Setting Backstop Take Rate](pool-creators/setting-backstop-take-rate.md)
 * [Setting Max Positions](pool-creators/setting-max-positions.md)
 * [Backstop Bootstrapping](pool-creators/backstop-bootstrapping.md)
+* [Required Infrastructure](pool-creators/required-infrastructure.md)
 
 ## 📚 Tech Docs
 
@@ -59,3 +60,4 @@
     * [Bad Debt Management](tech-docs/core-contracts/lending-pool/bad-debt-management.md)
 * [Guides](tech-docs/guides/README.md)
   * [Deploying a Pool](tech-docs/guides/deploying-a-pool.md)
+* [Potential Improvements](tech-docs/potential-improvements.md)
