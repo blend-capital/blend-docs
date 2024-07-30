@@ -26,7 +26,7 @@
 ## 🌊 Pool Creators
 
 * [General](pool-creators/general.md)
-* [Tutorial: Deploying a Pool](pool-creators/tutorial-deploying-a-pool.md)
+* [Tutorial: Setting Up a Pool](pool-creators/tutorial-setting-up-a-pool.md)
 * [Adding Assets](pool-creators/adding-assets/README.md)
   * [Risk Parameters](pool-creators/adding-assets/risk-parameters.md)
   * [Interest Rates](pool-creators/adding-assets/interest-rates.md)
