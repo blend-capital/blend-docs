@@ -59,11 +59,11 @@ The backstop module is a pool of funds that acts as first-loss capital for each 
 
 #### Depositing and Withdrawing Funds
 
-Users deposit 80/20 weighted BLND:USDC liquidity pool tokens into a backstop module for an isolated lending pool. BLND being 80% of the pool's weight, and USDC being 20. They can withdraw their deposits at any time. However, initiating a withdrawal places the funds into a withdrawal queue, where they remain for 21 days. After the queue expires, users can withdraw their funds as long as the backstop module has no remaining bad debt. The queue period ensures the backstop module can effectively perform its function as lender insurance.
+Users deposit 80/20 weighted BLND:USDC liquidity pool tokens into a backstop module for an isolated lending pool. BLND being 80% of the pool's weight, and USDC being 20. They can withdraw their deposits at any time. However, initiating a withdrawal places the funds into a withdrawal queue, where they remain for 21 days. Deposits that are queued for withdrawal will not earn backstop emissions. After the queue expires, users can withdraw their funds as long as the backstop module has no remaining bad debt. The queue period ensures the backstop module can effectively perform its function as lender insurance.
 
 #### Lending Pool Interest Sharing
 
-In exchange for insuring pools, backstop module depositors receive a portion of the interest paid by pool borrowers unless their deposit is currently queued for withdrawal. The percent of borrower interest paid to the backstop module depends on the BackstopTakeRate parameter, which is set on pool creation and validated such that the backstop cannot capture more than 100% of interest. The portion of interest paid to backstop module depositors should be set higher for high-risk pools and lower for low-risk pools, reflecting their differing insurance requirements.
+In exchange for insuring pools, backstop module depositors receive a portion of the interest paid by pool borrowers. The percent of borrower interest paid to the backstop module depends on the BackstopTakeRate parameter, which is set on pool creation and validated such that the backstop cannot capture more than 100% of interest. The portion of interest paid to backstop module depositors should be set higher for high-risk pools and lower for low-risk pools, reflecting their differing insurance requirements.
 
 #### Covering Bad Debt
 
@@ -257,7 +257,7 @@ BLND tokens are emitted by the protocol to users. An emissions contract controls
 
 #### Backstop Depositor Emissions
 
-Users who deposit BLND:USDC LP tokens into the backstop module are eligible to receive a share of 70% of the total BLND emissions. All BLND:USDC LP token deposits are eligible for emissions regardless of the isolated pool the token is deposited in or the withdrawal queue status. Each BLND:USDC LP token deposit receives emissions proportional to the total BLND:USDC LP tokens deposited by all users in the backstop module.
+Users who deposit BLND:USDC LP tokens into the backstop module are eligible to receive a share of 70% of the total BLND emissions. All BLND:USDC LP token deposits are eligible for emissions regardless of the isolated pool the token is deposited in unless the deposit is queued for withdrawal. Each BLND:USDC LP token deposit receives emissions proportional to the total BLND:USDC LP tokens deposited by all users in the backstop module.
 
 #### Isolated Pool Emissions
 
