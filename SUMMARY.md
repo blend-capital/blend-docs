@@ -9,7 +9,7 @@
 ***
 
 * [🚀 Deployments](mainnet-deployments.md)
-* [🕵️‍♂️ Audits](audits.md)
+* [🕵️‍♂️ Audits & Bug Bounties](audits-and-bug-bounties.md)
 * [🧑‍🏭 Github](github.md)
 
 ## 👥 Users

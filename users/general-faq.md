@@ -75,7 +75,7 @@ Using any financial application involves risk. There are four main risks users s
 Blend functions using smart contracts. If a bug is discovered and exploited, it could result in a loss of user funds. To mitigate this risk, the Blend Protocol has been audited by third parties.\
 Audit Reports:
 
-[audits.md](../audits.md "mention")
+[audits-and-bug-bounties.md](../audits-and-bug-bounties.md "mention")
 
 #### Oracle Risk
 
