@@ -8,6 +8,7 @@
 
 ***
 
+* [🧪 Protocol Assets](protocol-assets.md)
 * [🚀 Deployments](mainnet-deployments.md)
 * [🕵️‍♂️ Audits & Bug Bounties](audits-and-bug-bounties.md)
 * [🧑‍🏭 Github](github.md)
