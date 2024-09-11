@@ -22,7 +22,7 @@ You must also set a logo or design mark off from the other content appearing in 
 
  
 
-<figure><img src=".gitbook/assets/BLND Token Logo@3x.png" alt="" width="188"><figcaption><p>Blend Token Icon</p></figcaption></figure>
+<figure><img src=".gitbook/assets/BLND Token Logo@3x.png" alt="" width="188"><figcaption><p>BLND Token Icon</p></figcaption></figure>
 
 </div>
 
