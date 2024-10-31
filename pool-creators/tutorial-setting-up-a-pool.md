@@ -2,7 +2,13 @@
 
 Here we'll walk through a step-by-step guide to deploying and setting up a new pool. The deployment can be carried out using simple scripts, the [blend-sdk](https://github.com/blend-capital/blend-sdk-js) may be helpful for writing these scripts. We recommend deploying your pool on testnet before doing so on mainnet.
 
-## Step 1: Deploy a new Pool Contract
+## Step 1: Decide on an oracle
+
+The oracle is backbone of a pool, and cannot be changed once an oracle is set.
+
+Please review [Selecting an Oracle](./selecting-an-oracle.md).
+
+## Step 2: Deploy a new Pool Contract
 
 We first deploy a new pool contract by calling the `deploy()` function on the Pool Factory Contract. The function takes the following parameters:
 
@@ -31,7 +37,7 @@ The Pool Factory contract address can be found here: [mainnet-deployments.md](..
 Many of the pool setup functions can only be called by the pool admin. If the pool creator intends for the admin to be a DAO or multisig it may be preferable for them to continue using their account to finish setting up the pool, then transfer pool ownership to the final admin using the Pool Contract's `set_admin()` function.
 {% endhint %}
 
-## Step 2: Add Pool Reserves
+## Step 3: Add Pool Reserves
 
 After the pool is deployed we add assets (reserves) to it by calling the Pool Contract's `queue_set_reserve()` function. The function takes the following parameters:
 
@@ -75,7 +81,7 @@ After the reserve is queued we finalize the addition by calling `set_reserve()` 
 Pool creator's should be careful not to update the pool status before adding all initial reserves. If they do there will be a manditory 7 day delay between calling `queue_set_reserve() and set_reserve()`&#x20;
 {% endhint %}
 
-## Step 3: Set up Pool Emissions
+## Step 4: Set up Pool Emissions
 
 After reserves are added, we set up pool emissions by calling the `set_emissions_config()` function. The function takes the following parameters:
 
@@ -98,9 +104,15 @@ pub struct ReserveEmissionMetadata {
 * `res_type` designates whether lenders or borrowers of the reserve will receive emissions. If liabilities are designated borrowers receive emissions, if supply is designated lenders receive emissions. It is possible for both to receive emissions, the vec input into the `set_emissions_config()` function just must include a `ReserveEmissionMetadata` struct for both reserve liabilities and supply.
 * `share` is the percent of total pool emissions the reserve (and reserve type) should receive. The total of all input `ReserveEmissionMetadata` share's must equal `10000000`.
 
-## Step 4 (optional): Set up Pool Backstop
+## Step 5 (optional): Set up Pool Backstop
 
 If the pool creator wishes to, they can fund the pool's backstop at this point so that the pool meets the minimum backstop threshold allowing it to be activated and potentially added to the backstop reward zone.
+
+**It is highly recommended to test your pool before depositing into the backstop**.
+
+For example, is there is a reserve that cannot have a priced fetched on the oracle, you will not be able to use the pool.
+
+An easy way to preview pool configuration is to navigate to your pool via the Blend UI. Searching `/dashboard?poolId=C...` will attempt to load the pool via the UI.
 
 #### How many Backstop Tokens do I need?
 
