@@ -7,11 +7,11 @@ The Blend protocol utilizes auctions to sell assets on behalf of the protocol to
 Auctions can be filled by invoking the `submit` function on a Blend pool, with the following Request included:
 
 Request
-* amount
+* amount `i128`
     * The percentage of the auction to fill as an integer, from 1-100.
-* request_type
+* request_type `u32`
     * The type of auction to fill (6 = liquidation, 7 = bad debt, 8 = interest).
-* address
+* address `Address`
     * The owner of the auction. This is the backstop address for bad debt and interest auctions, and the user being liquidated for liquidation auctions.
 
 ### How are auctions priced?
@@ -32,7 +32,7 @@ Bid(N) = \begin{cases}
 \end{cases}
 $$
 
-This results in a few key blocks for auctions. At block 0, the bidder pays the full bid but receives no assets. At block 200, the bid and lot are exactly the base value of the auction. At block 400, the bidder pays nothing but receives the full lot. The TL;DR is that in the first 200 blocks, the lot increases by 0.5% of the base per block, and the final 200 blocks, the bid decreases by 0.5% of the base per block.
+At block 0, the bidder pays the full bid but receives nothing. Between block 0 and 200, the lot increases by 0.5% of the base. At block 200, the bid and lot are exactly the base value of the auction. Between block 200 and 400, the bid decreases by 0.5% of the base. At block 400, the bidder pays nothing but receives the full lot.
 
 ### Interest Auctions
 
@@ -40,7 +40,7 @@ Interest auctions facilitate the sale of the backstop's earned interest for back
 
 #### Bid
 
-The bid contains only the backstop token. On a successful fill, the backstop token is transferred from the bidder to the pool.
+The bid contains only the [backstop token](./backstopping.md#what-is-the-backstop-token). On a successful fill, the backstop token is transferred from the bidder to the pool.
 
 #### Lot
 
@@ -52,11 +52,11 @@ Liquidation auctions facilitate the sale of a liquidated users collateral in exc
 
 #### Bid
 
-The bid contains a set of [DTokens](../tech-docs/core-contracts/lending-pool/protocol-tokens.md#dtokens) currently held by the liquidated user. On a successful fill, the DTokens in the bid are moved from the liquidated user to the bidder. The bidder now has a liability against the pool that they can decide when and how to repay.
+The bid contains a set of [dTokens](../tech-docs/core-contracts/lending-pool/protocol-tokens.md#dtokens) currently held by the liquidated user. On a successful fill, the dTokens in the bid are moved from the liquidated user to the bidder. The bidder now has a liability against the pool that they can decide when and how to repay.
 
 #### Lot
 
-The lot contains a set of [BTokens](../tech-docs/core-contracts/lending-pool/protocol-tokens.md#btokens) currently held by the liquidated user. On a successful bid, the BTokens in the lot are moved from the liquidated user to the bidder. The bidder now has additional collateral against the pool that they can decide when and how to withdraw.
+The lot contains a set of [bTokens](../tech-docs/core-contracts/lending-pool/protocol-tokens.md#btokens) currently held by the liquidated user. On a successful bid, the bTokens in the lot are moved from the liquidated user to the bidder. The bidder now has additional collateral against the pool that they can decide when and how to withdraw.
 
 ### Bad Debt Auctions
 
@@ -64,8 +64,8 @@ Bad debt can be generated as a result of liquidations. If a liquidated user does
 
 #### Bid
 
-The bid contains a set of [DTokens](../tech-docs/core-contracts/lending-pool/protocol-tokens.md#dtokens) currently held by the backstop. On a successful fill, the DTokens in the bid are moved from the backstop to the bidder. The bidder now has a liability against the pool that they can decide when and how to repay.
+The bid contains a set of [dTokens](../tech-docs/core-contracts/lending-pool/protocol-tokens.md#dtokens) currently held by the backstop. On a successful fill, the dTokens in the bid are moved from the backstop to the bidder. The bidder now has a liability against the pool that they can decide when and how to repay.
 
 #### Lot
 
-The lot contains only the backstop token. On a successful fill, the backstop token is transferred from the backstop to the bidder.
+The lot contains only the [backstop token](./backstopping.md#what-is-the-backstop-token). On a successful fill, the backstop token is transferred from the backstop to the bidder.

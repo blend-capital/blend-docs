@@ -6,12 +6,11 @@ Pool creators must set a pool's oracle contract when they create a pool. This mu
 
 **Oracles CANNOT be changed after a pool is created, so please be very careful when selecting an oracle for a pool.**
 
-Oracles must support the "lastprice" and "decimals" functions on the SEP-40 oracle standard\
-[https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0040.md](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0040.md)
+Oracles must support the "lastprice" and "decimals" functions on the [SEP-40 oracle standard](https://github.com/stellar/stellar-protocol/blob/master/ecosystem/sep-0040.md).
 
 ### Test the Oracle
 
-It is required to verify that "lastprice" works for all potential reserves the pool will maintain. Please note that the Blend pool will always invoke the oracle with `Stellar::Asset({contract_id})` to fetch last price.
+It is required to verify that "lastprice" works for all potential reserves the pool will maintain. Please note the Blend pool will always invoke the oracle with `Asset::Stellar({contract_address})` to fetch last price.
 
 The oracle can be tested by using the `PoolOracle` object provided via the [Blend JS SDK](https://github.com/blend-capital/blend-sdk-js).
 
@@ -52,7 +51,7 @@ console.log(JSON.stringify(oracle, replacer, 2));
 
 ### Oracle Adapters
 
-When a generalized oracle is insufficient for a pool, i.e. it doesn't support all assets the pool needs prices for, the pool creator may need to use an oracle adaptor. An oracle adaptor is a custom oracle contract that uses custom logic to aggregate multiple oracle feeds or impose desired behavior, such as reporting TWAP prices.
+When a generalized oracle is insufficient for a pool (i.e. it doesn't support all assets the pool needs prices for), the pool creator may need to use an oracle adaptor. An oracle adaptor is a custom oracle contract that uses custom logic to aggregate multiple oracle feeds or impose desired behavior, such as reporting TWAP prices.
 
 **Sample Oracle Adapter:**\
 [https://github.com/blend-capital/oracle-aggregator](https://github.com/blend-capital/oracle-aggregator)
