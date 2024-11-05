@@ -23,6 +23,7 @@
   * [Liquidations](users/lending-borrowing/liquidations.md)
 * [Backstopping](users/backstopping.md)
 * [BLND Token](users/blnd-token.md)
+* [Auctions](users/auctions.md)
 
 ## 🌊 Pool Creators
 
@@ -59,6 +60,7 @@
     * [Interest Management](tech-docs/core-contracts/lending-pool/interest-management.md)
     * [Pool Management](tech-docs/core-contracts/lending-pool/pool-management.md)
     * [Bad Debt Management](tech-docs/core-contracts/lending-pool/bad-debt-management.md)
+    * [Protocol Tokens](tech-docs/core-contracts/lending-pool/protocol-tokens.md)
 * [Guides](tech-docs/guides/README.md)
   * [Deploying a Pool](tech-docs/guides/deploying-a-pool.md)
 * [Potential Improvements](tech-docs/potential-improvements.md)
