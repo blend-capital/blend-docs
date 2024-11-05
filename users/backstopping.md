@@ -4,7 +4,15 @@
 
 Each Blend lending pool has a backstop module, which protects the lending pool from bad debt. If a user incurs bad debt because their positions aren't liquidated quickly enough, their bad debt is transferred to the backstop module, which pays it off by auctioning off its deposits.\
 \
-Users can backstop pools by depositing into their backstop module, thus participating in insuring the lending pool.&#x20;
+Users can backstop pools by depositing into their backstop module, thus participating in insuring the lending pool.
+
+### What is the Backstop Token?
+
+The backstop supports a single token for all deposits.
+
+The backstop token is [BLND:USDC 80:20 liquidity pool shares](backstopping.md#what-are-blnd-usdc-80-20-liquidity-pool-shares).
+
+The contract address on mainnet can be found [here](../mainnet-deployments.md#cas3fl6tlzkdggsisdbwggpxt3nrr4dytzd7yod3hmyo6ltjuvgrveam).
 
 ### Why Would a User Backstop a Pool?
 

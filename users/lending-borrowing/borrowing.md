@@ -59,7 +59,7 @@ $$EffectiveLiabilityValue = \frac{LiabilityValue}{LiabilityFactor}$$
 
 Interest automatically accrues to a borrower's liability balance over time. When they repay their debt, they will also be paying any interest they owe.&#x20;
 
-### How Is Interest Calculated&#x20;
+### How Is Interest Calculated?
 
 Interest rates vary based on pre-set interest rate parameters but are generally based on the utilization of an asset in a pool (how much of the supplied amount is borrowed). In addition, interest can move higher or lower if an asset is consistently over or underutilized due to the interest rate model's reactivity.&#x20;
 
@@ -68,4 +68,3 @@ To learn more about how Blend calculates interest rates, see the [interest rate 
 ### Do Borrowers Earn BLND Emissions?
 
 Borrowers earn BLND emissions if their pool is in the reward zone, and the pool creator allocated emissions to borrowers of the asset the user is borrowing. They may claim these emissions at any time.
-
