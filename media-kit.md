@@ -1,4 +1,4 @@
-# 🧪 Protocol Assets
+# 🧪 Media Kit
 
 You must use these assets in the form in which they are made available below. To avoid confusion, you may not alter the color, font, proportions, or any other aspect of these logos and design marks.
 
@@ -44,9 +44,11 @@ You must also set a logo or design mark off from the other content appearing in 
 
 <figure><img src=".gitbook/assets/Blend Logo Word Box@3x.png" alt="" width="375"><figcaption><p>Blend Wordmark - Green - Boxed</p></figcaption></figure>
 
+ 
+
+<figure><img src=".gitbook/assets/Blend Logo Word - White@3x (1).png" alt="" width="375"><figcaption><p>Blend Wordmark - White</p></figcaption></figure>
+
 </div>
-
-
 
 ## Basics
 
