@@ -11,7 +11,7 @@ Lenders provide assets to the lending pool and receive interest in return. Borro
 Lenders can withdraw lent assets from the protocol at any time as long as two conditions are met:
 
 * The lending pool tokens are lent to must have sufficient liquidity — this means the pool must have more unborrowed assets than the amount the lender wishes to withdraw.&#x20;
-  * If the pool does not have sufficient liquidity, the interest rate model will ensure liquidity increases. Blend's interest rate model raises interest if an asset is overutilized, ensuring that either borrowers repay, are liquidated, or more lenders enter the pool to receive the high interest rates. To learn more, see the [interest rate section](../../whitepaper/blend-whitepaper.md#interest-rates) of the whitepaper.
+  * If the pool does not have sufficient liquidity, the interest rate model will ensure liquidity increases. Blend's interest rate model raises interest if an asset is overutilized, ensuring that either borrowers repay, are liquidated, or more lenders enter the pool to receive the high interest rates. To learn more, see the [interest rate section](../../blend-whitepaper.md#interest-rates) of the whitepaper.
 * The lender must be in good standing with the pool post-withdrawal — lenders have the option of using lent funds as collateral to borrow other pool assets. If they choose to do so, they are only allowed to withdraw lent funds if the withdrawal does not cause them to exceed their [borrow limit](borrowing.md#how-much-can-users-borrow). Otherwise, they must repay the borrowed funds before they can withdraw.
 
 ### Why would users lend on Blend?
@@ -20,7 +20,7 @@ In exchange for lending using Blend lending pools, lenders receive interest from
 
 ### What is the interest rate for lending on Blend?
 
-Lending interest rates equal the _borrowing interest rate_ multiplied by the _utilization ratio_ since interest paid by borrowers is distributed proportionally to lenders. Borrowing interest rates are demand-based and calculated using the utilization ratio. This means borrowing interest rates increase as the percentage of protocol assets lent to borrowers increases. See the [interest rate section](../../whitepaper/blend-whitepaper.md#interest-rates) of the whitepaper to learn more about how they are calculated.
+Lending interest rates equal the _borrowing interest rate_ multiplied by the _utilization ratio_ since interest paid by borrowers is distributed proportionally to lenders. Borrowing interest rates are demand-based and calculated using the utilization ratio. This means borrowing interest rates increase as the percentage of protocol assets lent to borrowers increases. See the [interest rate section](../../blend-whitepaper.md#interest-rates) of the whitepaper to learn more about how they are calculated.
 
 ### How do lenders receive interest?
 

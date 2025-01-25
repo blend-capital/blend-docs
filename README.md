@@ -10,3 +10,8 @@ This is the Blend documentation page. Your place for all things related to the B
 * [Pool Creator Documentation](pool-creators/general.md) Information on how pool creators can create lending pools using Blend
 
 Explore the docs to find out more!
+
+
+
+**🪺 Follow** [**@blend\_capital on Twitter**](https://x.com/blend_capitalhttps:/x.com/blend_capital)**!**\
+**💬 Join the** [**Blend Discord**](https://discord.com/invite/a6CDBQQcjW)**!**

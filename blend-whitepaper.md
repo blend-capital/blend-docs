@@ -1,4 +1,4 @@
-# Blend Whitepaper
+# 📄 Blend Whitepaper
 
 ## Blend Whitepaper
 
@@ -21,7 +21,7 @@ This paper introduces a liquidity protocol primitive, Blend. A liquidity protoco
 
 ## Introduction
 
-Decentralized money markets act as a cornerstone for healthy crypto-economic systems. They trustlessly facilitate the flow of capital to wherever it is most productive, increasing capital efficiency and generating interest along the way. Aave and Compound prove these products' value with their success in the Ethereum ecosystem. Since their inception during the early stages of decentralized finance (DeFi), they quickly became two of the industry’s largest and most used DeFi protocols. Aave remains one of the largest, peaking at approximately $30 billion in liquidity \[[1](https://github.com/aave/aave-v3-core/blob/master/techpaper/Aave\_V3\_Technical\_Paper.pdf)].
+Decentralized money markets act as a cornerstone for healthy crypto-economic systems. They trustlessly facilitate the flow of capital to wherever it is most productive, increasing capital efficiency and generating interest along the way. Aave and Compound prove these products' value with their success in the Ethereum ecosystem. Since their inception during the early stages of decentralized finance (DeFi), they quickly became two of the industry’s largest and most used DeFi protocols. Aave remains one of the largest, peaking at approximately $30 billion in liquidity \[[1](https://github.com/aave/aave-v3-core/blob/master/techpaper/Aave_V3_Technical_Paper.pdf)].
 
 Despite their usefulness, current money markets fall short in terms of flexibility. Users want to utilize a wide range of their crypto assets in money markets. However, supporting risky assets, especially as collateral, can put protocol funds at risk. Aave and Compound forgo flexibility and have extensive governance systems that ensure any asset meets well-defined criteria before adding it to their markets \[[2](https://medium.com/gauntlet-networks/gauntlets-parameter-recommendation-methodology-8591478a0c1c), [3](https://docs.aave.com/risk/asset-risk/introduction)]. Other protocols like Euler and Rari have novel approaches for managing permissionless listings that segment asset risk \[[4](https://docs.euler.finance/getting-started/white-paper#permissionless-listing)]. Unfortunately, these approaches can lead to liquidity fragmentation and low capital utilization.
 
@@ -31,7 +31,7 @@ Blend represents a new, more primitive approach to decentralized money market pr
 
 ### System Diagram
 
-<figure><img src="../.gitbook/assets/Blend System Diagram@3x.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Blend System Diagram@3x.png" alt=""><figcaption></figcaption></figure>
 
 ### Isolated Lending Pools
 
@@ -119,7 +119,7 @@ $$
 U=1- \frac{Balance_{Pool}}{bTokenTotalSupply * bTokenRate}
 $$
 
-Each asset in the pool defines a target utilization rate and three initial interest rates: at the target utilization ratio $U\_T$, 95% utilization ratio, and 100% utilization ratio. The initial rates are used to calculate three slope values $R\_1$, $R\_2$, and $R\_3$. These values define an interest rate model, similar to Aave’s\[[6](https://github.com/aave/aave-protocol/blob/master/docs/Aave\_Protocol\_Whitepaper\_v1\_0.pdf)], but with three distinct legs:
+Each asset in the pool defines a target utilization rate and three initial interest rates: at the target utilization ratio $U\_T$, 95% utilization ratio, and 100% utilization ratio. The initial rates are used to calculate three slope values $R\_1$, $R\_2$, and $R\_3$. These values define an interest rate model, similar to Aave’s\[[6](https://github.com/aave/aave-protocol/blob/master/docs/Aave_Protocol_Whitepaper_v1_0.pdf)], but with three distinct legs:
 
 $$
 IR(U)= \begin{cases} RM*(R_{base}+\frac{U}{U_T}R_1) & \text{if } U\leq U_T\\ RM*(R_{base}+R_1+\frac{U-U_T}{0.95-U_T}R_2) & \text{if } U_T\lt U\leq 0.95\\ RM*(R_{base}+R_1+R_2)+\frac{U-0.95}{0.05}R_3 & \text{if } 0.95\lt U\\ \end{cases}
@@ -129,7 +129,7 @@ $$
 \begin{align*} \text{where}\\ &RM =\text{Rate modifier for pool asset}\\ &R_{base} =\text{Protocol's base interest rate (0.01)}\\ &R_1, R_2, R_3 =\text{Interest rate slope values for pool asset} \end{align*}
 $$
 
-<figure><img src="../.gitbook/assets/interest_rate_model.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/interest_rate_model.png" alt=""><figcaption></figcaption></figure>
 
 _Figure 1: Interest rate curve examples for various asset classes where low curve has (U\_T=0.9, R\_1=0.03, R\_2=0.2, R\_3=1), medium curve has (U\_T=0.75, R\_1=0.05, R\_2=0.5, R\_3=1.5), high curve has (U\_T=0.6, R\_1=0.07, R\_2=1, R\_3=2), and the Rate Modifier is 1._
 

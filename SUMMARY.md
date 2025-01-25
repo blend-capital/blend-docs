@@ -1,13 +1,7 @@
 # Table of contents
 
 * [Blend Documentation](README.md)
-
-## 📄 Whitepaper
-
-* [Blend Whitepaper](whitepaper/blend-whitepaper.md)
-
-***
-
+* [📄 Blend Whitepaper](blend-whitepaper.md)
 * [🧪 Media Kit](media-kit.md)
 * [🚀 Deployments](mainnet-deployments.md)
 * [🕵️‍♂️ Audits & Bug Bounties](audits-and-bug-bounties.md)

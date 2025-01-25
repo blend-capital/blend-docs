@@ -7,29 +7,24 @@ The Blend protocol utilizes auctions to sell assets on behalf of the protocol to
 Auctions can be filled by invoking the `submit` function on a Blend pool, with the following Request included:
 
 Request
+
 * amount `i128`
-    * The percentage of the auction to fill as an integer, from 1-100.
-* request_type `u32`
-    * The type of auction to fill (6 = liquidation, 7 = bad debt, 8 = interest).
+  * The percentage of the auction to fill as an integer, from 1-100.
+* request\_type `u32`
+  * The type of auction to fill (6 = liquidation, 7 = bad debt, 8 = interest).
 * address `Address`
-    * The owner of the auction. This is the backstop address for bad debt and interest auctions, and the user being liquidated for liquidation auctions.
+  * The owner of the auction. This is the backstop address for bad debt and interest auctions, and the user being liquidated for liquidation auctions.
 
 ### How are auctions priced?
 
 The auctions are priced based on how many blocks have passed since the auction began, over the course of 400 blocks. The initial price of auctions are set differently based on each auction, but on creation each auction will be set with base values for each asset in the lot and bid. This base value is then scaled for each asset based on the amount of blocks that have passed:
 
 $$
-Lot(N) = \begin{cases} 
-    Lot_{base}*\frac{1}{200}N & \text{if } N\lt 200\\
-    Lot_{base} & \text{if } N\geq 200\\ 
-\end{cases}
+Lot(N) = \begin{cases} Lot_{base}*\frac{1}{200}N & \text{if } N\lt 200\\ Lot_{base} & \text{if } N\geq 200\\ \end{cases}
 $$
 
 $$
-Bid(N) = \begin{cases} 
-    Bid_{base} & \text{if } N\leq 200\\ 
-    Bid_{base}*(1-\frac{1}{200}(N-200)) & \text{if } N\gt 200\\
-\end{cases}
+Bid(N) = \begin{cases} Bid_{base} & \text{if } N\leq 200\\ Bid_{base}*(1-\frac{1}{200}(N-200)) & \text{if } N\gt 200\\ \end{cases}
 $$
 
 At block 0, the bidder pays the full bid but receives nothing. Between block 0 and 200, the lot increases by 0.5% of the base. At block 200, the bid and lot are exactly the base value of the auction. Between block 200 and 400, the bid decreases by 0.5% of the base. At block 400, the bidder pays nothing but receives the full lot.
@@ -40,7 +35,7 @@ Interest auctions facilitate the sale of the backstop's earned interest for back
 
 #### Bid
 
-The bid contains only the [backstop token](./backstopping.md#what-is-the-backstop-token). On a successful fill, the backstop token is transferred from the bidder to the pool.
+The bid contains only the [backstop token](backstopping.md#what-is-the-backstop-token). On a successful fill, the backstop token is transferred from the bidder to the pool.
 
 #### Lot
 
@@ -68,4 +63,4 @@ The bid contains a set of [dTokens](../tech-docs/core-contracts/lending-pool/pro
 
 #### Lot
 
-The lot contains only the [backstop token](./backstopping.md#what-is-the-backstop-token). On a successful fill, the backstop token is transferred from the backstop to the bidder.
+The lot contains only the [backstop token](backstopping.md#what-is-the-backstop-token). On a successful fill, the backstop token is transferred from the backstop to the bidder.

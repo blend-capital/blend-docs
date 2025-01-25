@@ -12,4 +12,4 @@ When a liquidator fills the auction, the filled liability and collateral positio
 
 Since liquidators have autonomy over when to fill the auction, they will typically fill it at a point where the value of the collateral they receive slightly exceeds the value of the liabilities they repay.
 
-For a full explanation of the liquidation process, see the [liquidation section](../../whitepaper/blend-whitepaper.md#liquidations) of the whitepaper.
+For a full explanation of the liquidation process, see the [liquidation section](../../blend-whitepaper.md#liquidations) of the whitepaper.

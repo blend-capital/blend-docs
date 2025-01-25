@@ -16,7 +16,7 @@ Blend offers lending pools that are secure, capital efficient, and permissionles
 
 **Security**
 
-All Blend lending pools are isolated from one another. Therefore, lenders and borrowers are only exposed to the risk of the pool they're using. Additionally, each lending pool has mandatory insurance through the [backstop module](../whitepaper/blend-whitepaper.md#backstop-module).
+All Blend lending pools are isolated from one another. Therefore, lenders and borrowers are only exposed to the risk of the pool they're using. Additionally, each lending pool has mandatory insurance through the [backstop module](../blend-whitepaper.md#backstop-module).
 
 **Capital Efficiency**
 
@@ -52,15 +52,15 @@ Blend users must pay [Stellar Network fees](https://developers.stellar.org/docs/
 
 **Interest Rates**
 
-Borrowers on Blend must pay interest fees to lenders. These vary based on the parameters set by pool creators and fluctuate based on demand. For more information, see the [interest rates section](../whitepaper/blend-whitepaper.md#interest-rates) of the whitepaper.
+Borrowers on Blend must pay interest fees to lenders. These vary based on the parameters set by pool creators and fluctuate based on demand. For more information, see the [interest rates section](../blend-whitepaper.md#interest-rates) of the whitepaper.
 
 **Liquidation Premiums**
 
-When a Blend borrower is liquidated, the liquidator will likely demand a liquidation premium, meaning the value of the collateral they claim will be greater than the value of the liabilities they repay. The size of the premium is market-driven; it will always be the smallest premium needed to clear the liquidation. To learn more about the liquidation mechanism, see the[ liquidations section](../whitepaper/blend-whitepaper.md#liquidations) of the whitepaper.
+When a Blend borrower is liquidated, the liquidator will likely demand a liquidation premium, meaning the value of the collateral they claim will be greater than the value of the liabilities they repay. The size of the premium is market-driven; it will always be the smallest premium needed to clear the liquidation. To learn more about the liquidation mechanism, see the[ liquidations section](../blend-whitepaper.md#liquidations) of the whitepaper.
 
 ### Can Blend be changed or upgraded?
 
-No. The closest thing to an upgrade for Blend is an [emissions fork](../whitepaper/blend-whitepaper.md#emission-migration) - in which case the old version of the protocol still functions as expected; it just stops receiving emissions.
+No. The closest thing to an upgrade for Blend is an [emissions fork](../blend-whitepaper.md#emission-migration) - in which case the old version of the protocol still functions as expected; it just stops receiving emissions.
 
 ### What's a BLND token?
 

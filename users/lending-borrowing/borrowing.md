@@ -2,13 +2,13 @@
 
 ### How does borrowing work on Blend?
 
-Borrowing from Blend requires users to post sufficient collateral to the lending pool they are borrowing from. The collateral posted is also lent to the pool, so borrowers generate interest on it. \
+Borrowing from Blend requires users to post sufficient collateral to the lending pool they are borrowing from. The collateral posted is also lent to the pool, so borrowers generate interest on it.\
 \
 The amount of collateral the borrower must post depends on their collateral's Collateral Factor(CF) and the borrowed asset's Liability Factor(LF). The required dollar value of their collateral can be calculated with the following formula:
 
 $$CollateralValue = \frac{LiabilityValue}{LF*CF }$$
 
-So if the user has collateral with a $$CF$$ of 0.5 and is attempting to borrow $450 of an asset with a $$LF$$of 0.9, they must post at least $1000 of collateral.&#x20;
+So if the user has collateral with a $$CF$$ of 0.5 and is attempting to borrow $450 of an asset with a $$LF$$of 0.9, they must post at least $1000 of collateral.
 
 Borrowers must always maintain this collateral ratio as the value of their collateral and liabilities shifts. If they ever lack sufficient collateral, they will be [liquidated](liquidations.md).
 
@@ -39,7 +39,7 @@ In exchange for borrowing from Blend lending pools, borrowers receive BLND issua
 
 ### What Assets can be Borrowed?
 
-Any Stellar-based asset enabled for borrowing by the lending pool the user is using can be borrowed with Blend. If an asset isn't supported, a new pool can be created to support it as long as the pool can attract sufficient backstop module deposits to reach the [minimum deposit threshold](../../whitepaper/blend-whitepaper.md#backstop-threshold).
+Any Stellar-based asset enabled for borrowing by the lending pool the user is using can be borrowed with Blend. If an asset isn't supported, a new pool can be created to support it as long as the pool can attract sufficient backstop module deposits to reach the [minimum deposit threshold](../../blend-whitepaper.md#backstop-threshold).
 
 ### How do Borrowers Repay Borrowed Assets?
 
@@ -57,13 +57,13 @@ $$EffectiveLiabilityValue = \frac{LiabilityValue}{LiabilityFactor}$$
 
 ### How Do Borrowers Pay Interest?
 
-Interest automatically accrues to a borrower's liability balance over time. When they repay their debt, they will also be paying any interest they owe.&#x20;
+Interest automatically accrues to a borrower's liability balance over time. When they repay their debt, they will also be paying any interest they owe.
 
 ### How Is Interest Calculated?
 
-Interest rates vary based on pre-set interest rate parameters but are generally based on the utilization of an asset in a pool (how much of the supplied amount is borrowed). In addition, interest can move higher or lower if an asset is consistently over or underutilized due to the interest rate model's reactivity.&#x20;
+Interest rates vary based on pre-set interest rate parameters but are generally based on the utilization of an asset in a pool (how much of the supplied amount is borrowed). In addition, interest can move higher or lower if an asset is consistently over or underutilized due to the interest rate model's reactivity.
 
-To learn more about how Blend calculates interest rates, see the [interest rate section](../../whitepaper/blend-whitepaper.md#interest-rates) of the whitepaper.
+To learn more about how Blend calculates interest rates, see the [interest rate section](../../blend-whitepaper.md#interest-rates) of the whitepaper.
 
 ### Do Borrowers Earn BLND Emissions?
 

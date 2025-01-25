@@ -1,12 +1,14 @@
-# Deploying A New Lending Pool
+# Deploying a Pool
+
+## Deploying A New Lending Pool
 
 This guide will walk you step-by-step through deploying a new lending pool using the scripts in the blend-utils repository(https://github.com/blend-capital/blend-utils).
 
-# Prerequisites
+## Prerequisites
 
 The following decisions and actions must be made before deploying a pool.
 
-## Funding the Pool's Backstop
+### Funding the Pool's Backstop
 
 To activate a pool, and to receive BLND emissions, the pool's backstop module must be funded with a minimum amount of BLND:USDC 80:20 liquidity pool shares.
 
@@ -16,39 +18,49 @@ In order to activate a pool the pool's backstop must meet the minimum backstop t
 **Example:**\
 With the following pool state:
 
-- 10,000,000 BLND:USDC 80:20 liquidity pool shares
-- 20,000,000 BLND liquidity pool balance
-- 500,000 USDC liquidity pool balance
-- fee of 0.3%
-  The required liquidity pool shares to activate the pool would be 209,127.91 BLND:USDC 80:20 liquidity pool shares.\
-  $$
-  Ktotal = 20m^{0.8} * 500k^{0.2} = 9,563,525
-  $$
-  $$
-  kPerShare = \frac{Ktotal}{10m} =  0.96
-  $$
-  $$
-  sharesRequired = \frac{200,000}{kPerShare} = 209,127.91
-  $$
-  **Balanced Deposit Requirement:**\
-  $$
-  requiredBLND = \frac{sharesRequired}{20m*Ktotal} = 437,344.83
-  $$
-  $$
-  requiredUSDC = \frac{sharesRequired}{500k*Ktotal} =  10,933.62
-  $$
-  **USDC Deposit Requirement:**\
-  we increase required shares by the fee amount to account for the swap fee and slippage realized in a single sided deposit.\
-  $$
-  requiredUSDC = -\frac{\frac{10m-sharesRequired*1.003}{10m}^(1/0.2)*500k-500k}{1-(0.003*(1-0.2))} = 50,405.59
-  $$
-  **BLND Deposit Requirement:**\
-  we increase required shares by the fee amount to account for the swap fee and slippage realized in a single sided deposit.\
-  $$
-  requiredBLND = -\frac{\frac{10m-sharesRequired*1.003}{10m}^(1/0.8)*20m-20m}{1-(0.003*(1-0.8))} = 523,320.04
-  $$
-  {% endhint %}
-  To receive BLND emissions a pool must have sufficient BLND to be added to the backstop reward zone (https://docs.blend.capital/whitepaper/blend-whitepaper#reward-zone).
+* 10,000,000 BLND:USDC 80:20 liquidity pool shares
+* 20,000,000 BLND liquidity pool balance
+* 500,000 USDC liquidity pool balance
+*   fee of 0.3% The required liquidity pool shares to activate the pool would be 209,127.91 BLND:USDC 80:20 liquidity pool shares.\\
+
+    $$
+    Ktotal = 20m^{0.8} * 500k^{0.2} = 9,563,525
+    $$
+
+    $$
+    kPerShare = \frac{Ktotal}{10m} = 0.96
+    $$
+
+    $$
+    sharesRequired = \frac{200,000}{kPerShare} = 209,127.91
+    $$
+
+    **Balanced Deposit Requirement:**\\
+
+    $$
+    requiredBLND = \frac{sharesRequired}{20m*Ktotal} = 437,344.83
+    $$
+
+    $$
+    requiredUSDC = \frac{sharesRequired}{500k*Ktotal} = 10,933.62
+    $$
+
+    **USDC Deposit Requirement:**\
+    we increase required shares by the fee amount to account for the swap fee and slippage realized in a single sided deposit.\\
+
+    $$
+    requiredUSDC = -\frac{\frac{10m-sharesRequired*1.003}{10m}^(1/0.2)*500k-500k}{1-(0.003*(1-0.2))} = 50,405.59
+    $$
+
+    **BLND Deposit Requirement:**\
+    we increase required shares by the fee amount to account for the swap fee and slippage realized in a single sided deposit.\\
+
+    $$
+    requiredBLND = -\frac{\frac{10m-sharesRequired*1.003}{10m}^(1/0.8)*20m-20m}{1-(0.003*(1-0.8))} = 523,320.04
+    $$
+{% endhint %}
+
+To receive BLND emissions a pool must have sufficient BLND to be added to the backstop reward zone (https://docs.blend.capital/whitepaper/blend-whitepaper#reward-zone).
 
 If the reward zone is empty there is no requirement beyond meeting the backstop to be added to the reward zone. If the reward zone is full, the pool can replace another pool in the reward zone as long as it has more backstop deposits than the pool it is replacing.
 
@@ -56,46 +68,46 @@ If the pool creator does not want to fund the backstop themselves, they can stil
 
 Pool creators using the blend-utils repository to deploy a pool can designate whether and how to fund their backstop by setting the following consts in the `deploy_pool.js` script:
 
-- `deposit_asset` - The asset that will be deposited into the BLND:USDC pool to fund the deployed pool's backstop. `0` denotes BLND, `1` denotes USDC, and `2` denotes a balanced deposit of both BLND and USDC.
-- `blnd_max` - The maximum amount of BLND that can be deposited into the liquidity pool. This parameter is not used if the `deposit_asset` isn't `0` or `2`.
-- `usdc_max` - The maximum amount of USDC that can be deposited into the liquidity pool. This parameter is not used if the `deposit_asset` isn't `1` or `2`.
-- `mint_amount` - The number of liquidity pool tokens to mint for the user. The minted tokens will be deposited into the deployed pool's backstop.
+* `deposit_asset` - The asset that will be deposited into the BLND:USDC pool to fund the deployed pool's backstop. `0` denotes BLND, `1` denotes USDC, and `2` denotes a balanced deposit of both BLND and USDC.
+* `blnd_max` - The maximum amount of BLND that can be deposited into the liquidity pool. This parameter is not used if the `deposit_asset` isn't `0` or `2`.
+* `usdc_max` - The maximum amount of USDC that can be deposited into the liquidity pool. This parameter is not used if the `deposit_asset` isn't `1` or `2`.
+* `mint_amount` - The number of liquidity pool tokens to mint for the user. The minted tokens will be deposited into the deployed pool's backstop.
 
 They may also specify the starting status for their pool by setting the `status` const in the `deploy_pool.js` script. The pool's status can be set to `0` for `Active` (as long as the minimum backstop threshold was met), `2` for `Admin-On-Ice`, `3` for `On-Ice`, and `4` for `Admin-Frozen`. For more information on pool status see: https://docs.blend.capital/tech-docs/core-contracts/lending-pool/pool-management
 
 Finally, they can designate whether or not to add the pool to the reward zone with the `add_to_reward_zone` const in the `deploy_pool.js` script. And the pool to replace (if necessary) with the `pool_to_remove` const.
 
-## Managed vs Unmanaged Pools
+### Managed vs Unmanaged Pools
 
 Pools can be managed or unmanaged. Managed pools have a designated admin that has the authority to change pool status or update asset risk/interest rate parameters. Alternatively, the pool's admin address can be set to a dead address, which makes the pool immutable, although its status can still be changed by the backstop module.
 
 Pool creators using the blend-utils repository to deploy a pool can check the readme to see how to deploy a managed or unmanaged pool.
 
-## Deciding on Pool Parameters
+### Deciding on Pool Parameters
 
 Before deploying a pool, you must decide on the following pool parameters:
 
-- pool-name: The name of the pool.
-- (backstop-take-rate)[https://docs.blend.capital/pool-creators/setting-backstop-take-rate]
-- (max-positions)[https://docs.blend.capital/pool-creators/setting-max-positions]
+* pool-name: The name of the pool.
+* (backstop-take-rate)\[https://docs.blend.capital/pool-creators/setting-backstop-take-rate]
+* (max-positions)\[https://docs.blend.capital/pool-creators/setting-max-positions]
 
 Pool creators using the blend-utils repository to deploy a pool can check the readme to see how to set these parameters for pools deployed with the `deploy-pool.js` script.
 
-## Deciding on Asset Parameters
+### Deciding on Asset Parameters
 
 After choosing the assets to include in the pool, you must decide on risk, interest, and emission parameters for each asset. For more information on asset parameters see: https://docs.blend.capital/pool-creators/adding-assets
 
 Pool creators using the blend-utils repository to deploy a pool can check the readme to see how to set these parameters for assets deployed with the `deploy-pool.js` script.
 
-# Deploying a Pool with blend-utils
+## Deploying a Pool with blend-utils
 
 The blend-utils repository contains a script to make pool deployment easy and straightforward. Instrucutions on how to use the script can be found in the blend-utils repository readme.
 
-## Example Pool Deployment
+### Example Pool Deployment
 
 Here we will show an example of how to deploy a new pool using the blend-utils repository.
 
-### Step 1: Set up the blend-utils repository
+#### Step 1: Set up the blend-utils repository
 
 First, clone the blend-utils repository
 
@@ -115,7 +127,7 @@ Next, install the dependencies
 npm i
 ```
 
-### Step 2: Set up your .env file
+#### Step 2: Set up your .env file
 
 ```
 # The URL of the RPC server
@@ -132,7 +144,7 @@ ADMIN=S...
 
 ```
 
-### Step 3: Ensure the testnet.contracts.json file is up to date
+#### Step 3: Ensure the testnet.contracts.json file is up to date
 
 ```json
 {
@@ -158,7 +170,7 @@ ADMIN=S...
 }
 ```
 
-### Step 4: Modify the deploy-pool.js script to set the pool parameters
+#### Step 4: Modify the deploy-pool.js script to set the pool parameters
 
 ```typescript
 /// Deployment Constants
@@ -216,13 +228,13 @@ const poolToRemove = "Stellar";
 const revokeAdmin = true;
 ```
 
-### Step 5: Build Scripts
+#### Step 5: Build Scripts
 
 ```bash
 npm run build
 ```
 
-### Step 6: Deploy the Pool
+#### Step 6: Deploy the Pool
 
 ```bash
 node ./lib/scripts/user-scripts/deploy-pool.ts testnet

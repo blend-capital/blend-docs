@@ -15,7 +15,7 @@ Anyone can deploy an isolated lending pool using Blend. All they need to do is:
 
 #### For anchors, Blend offers
 
-* The ability to create lending markets that feature the anchor’s assets, improving asset usefulness, liquidity, and adoption. New markets and assets do not require the approval of a DAO (Blend has no DAO); instead, they must reach a [certain level of backstop module deposits](../whitepaper/blend-whitepaper.md#backstop-threshold) before being enabled. This allows Anchors to quickly create new markets when they introduce new assets.
+* The ability to create lending markets that feature the anchor’s assets, improving asset usefulness, liquidity, and adoption. New markets and assets do not require the approval of a DAO (Blend has no DAO); instead, they must reach a [certain level of backstop module deposits](../blend-whitepaper.md#backstop-threshold) before being enabled. This allows Anchors to quickly create new markets when they introduce new assets.
   * An additional benefit here is anchors can support liquidity pool shares featuring their assets as collateral. This allows stablecoins to build large amounts of liquidity when users loop liquidity pool shares (borrow against them, turn the borrowed deposits into more liquidity pool shares, and redeposit to repeat).
 
 #### For DeFi protocols, Blend offers

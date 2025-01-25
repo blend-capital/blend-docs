@@ -14,7 +14,7 @@ BLND is Blend's protocol token. BLND tokens are emitted to users by the protocol
 
 Users receive BLND tokens just for using the Blend Protocol!
 
-Lenders and borrowers receive emissions if the pool they're using is in the [reward zone](../whitepaper/blend-whitepaper.md#reward-zone) and has allocated emissions to lenders or borrowers of the asset they're lending or borrowing. 30% of BLND emissions are distributed to pools in the reward zone, and they're split between pools based on how large the pool's backstop deposit is.&#x20;
+Lenders and borrowers receive emissions if the pool they're using is in the [reward zone](../blend-whitepaper.md#reward-zone) and has allocated emissions to lenders or borrowers of the asset they're lending or borrowing. 30% of BLND emissions are distributed to pools in the reward zone, and they're split between pools based on how large the pool's backstop deposit is.&#x20;
 
 Backstop depositors always receive emissions. 70% of BLND emissions are distributed to backstop depositors.\
 
@@ -23,7 +23,7 @@ Emissions must claim them from either the pool or backstop (depending on how the
 
 ### How many BLND tokens are there?
 
-49 million BLND tokens were emitted upon protocol launch using [the Drop function](../whitepaper/blend-whitepaper.md#emissions-drop). After that, the protocol will emit 1 BLND per second to users. The initially minted tokens will be distributed as follows:
+49 million BLND tokens were emitted upon protocol launch using [the Drop function](../blend-whitepaper.md#emissions-drop). After that, the protocol will emit 1 BLND per second to users. The initially minted tokens will be distributed as follows:
 
 *   7,000,000 BLND to YieldBlox DAO
 
