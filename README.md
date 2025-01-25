@@ -13,5 +13,5 @@ Explore the docs to find out more!
 
 
 
-**🪺 Follow** [**@blend\_capital on Twitter**](https://x.com/blend_capitalhttps:/x.com/blend_capital)**!**\
+**🪺 Follow** [**@blend\_capital on Twitter**](https://x.com/blend_capital)**!**\
 **💬 Join the** [**Blend Discord**](https://discord.com/invite/a6CDBQQcjW)**!**
