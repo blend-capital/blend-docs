@@ -136,7 +136,7 @@ _Figure 1: Interest rate curve examples for various asset classes where low curv
 The Rate Modifier is a reactive value that adjusts the interest rate the pool charges for borrowing the asset to achieve a target utilization rate. The modifier slowly sums the error in utilization over time, compensating for any steady-state error as a result of the user-defined initial interest rates. The value is bounded between _\[0.1, 100]_ to limit the effective interest rate change possible and avoid potential integral windup that could cause instability. The updated modifier is calculated as follows:
 
 $$
-Util Rate Error = \Delta seconds * (U_T-U)
+Util Rate Error = \Delta seconds * (U-U_T)
 $$
 
 $$
